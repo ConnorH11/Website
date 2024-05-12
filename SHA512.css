@@ -1,0 +1,48 @@
+#essay { 
+    border-radius: 10px;
+    font-size: 1.2em; 
+    padding: 10px;
+    Height: 80%;
+    margin: 0 auto;
+    width: 85%;
+    color: white;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+}
+
+h3 {
+    font-family: 'Raleway', sans-serif;
+}
+p, ul, li {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: #2D3142;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 80%;
+  }
+
+  nav {
+    text-align: center;
+    background-size: contain;
+    height: 50px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family: 'Raleway', sans-serif;
+}
+nav a {
+    padding: 10px;
+    color: white;
+    font-size: 20px;
+    text-decoration:none;
+}
+a {
+    color: white;
+}
