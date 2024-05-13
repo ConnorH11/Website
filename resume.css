@@ -1,7 +1,7 @@
 body {
     margin: 0 auto;
     padding: 0;
-    width: 50%;
+    width: 65%;
     background: #2D3142;
 }
 .container {
@@ -10,7 +10,6 @@ body {
     font-size: 1.2em; 
     font-size: 20px;
     padding: 10px;
-    Height: 80%;
     margin: 0 auto;
     width: 85%;
     justify-content: center;
