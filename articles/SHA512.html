@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Connor Horning</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <style>
+        body {
+          background-color: #0E2431;
+        }
+        .card2 {
+      background-color: #F5F7FA;
+      color: #0E2431;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      max-width: 900px;
+      margin: 100px auto;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 1rem auto;
+    }
+
+    ul {
+      margin-left: 1rem;
+    }
+  </style>
+  </head>
+  <body>
+    <nav class="navbar desktop-nav" id="navbar">
+      <div class="nav-content">
+        <div class="logo">
+          <a href="/index.html">Connor Horning</a>
+        </div>
+        <ul class="nav-links">
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/articles.html">Articles</a></li>
+          <li><a href="/projects.html">Projects</a></li>
+          <li><a href="/resume.html">Resume</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+          <li><a href="/aboutme.html">About Me</a></li>
+        </ul>
+      </div>
+    </nav>
+  
+    <!-- Mobile Navbar -->
+    <nav class="mobile-nav" id="mobileNav">
+      <div class="logo">
+        <a href="/index.html">Connor Horning</a>
+      </div>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+    <ul class="mobile-menu" id="mobileMenu">
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/articles.html">Articles</a></li>
+      <li><a href="/projects.html">Projects</a></li>
+      <li><a href="/resume.html">Resume</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+      <li><a href="/aboutme.html">About Me</a></li>
+    </ul>
+    
+    
+    <home> 
+      <div class="card2">
+        <h1 style="color:#0E2431;">SHA-512</h1>
+    
+        <h3 style="color:#0E2431;">What is SHA-512?</h3>
+        <p>SHA512 is a member of the SHA-2 family developed by NIST in 2001. It is a cryptographic hash function that generates a 512-bit hash value, typically represented as a 128-character hexadecimal number. SHA-512 is designed to be a one-way function, meaning it's practically infeasible to reverse the hash back into the original data or find two different inputs that produce the same hash.</p>
+    
+        <h3 style="color:#0E2431;">What is Hashing?</h3>
+        <p>Hashing is a method used in cybersecurity to secure data. It transforms input data into a fixed-length string of characters, which appears random. This is widely used in password storage, file integrity checks, and digital signatures because even a slight change in input results in a dramatically different hash.</p>
+    
+        <img src="../Images/Hash1.png" alt="Hash Example 1" />
+        <p>Figure 1. Example of hashing data using SHA-512.</p>
+    
+        <img src="../Images/Hash2.png" alt="Hash Example 2" />
+        <p>Figure 2. Even the smallest change to input results in a very different hash output.</p>
+    
+        <h3 style="color:#0E2431;">Examples of Where SHA512 is Used</h3>
+        <ul>
+          <li><strong>Data Integrity Verification</strong>
+            <p>SHA-512 is used to ensure data has not been altered. When downloading files, SHA-512 hashes are often provided so users can verify the integrity of the file by hashing the downloaded file and comparing it to the provided hash.</p>
+          </li>
+          <li><strong>Digital Signatures</strong>
+            <p>Digital signatures use SHA-512 to create a hash of the signed content. This hash is then encrypted with a private key to create the signature. When verifying the signature, the recipient hashes the content again and decrypts the signature using the sender's public key. If the two hashes match, the content is verified.</p>
+          </li>
+          <li><strong>Password Storage</strong>
+            <p>SHA-512 is sometimes used (ideally with salt) to hash passwords before storing them in a database. This ensures that even if the database is compromised, the actual passwords are not exposed in plaintext.</p>
+          </li>
+          <li><strong>Blockchain and Cryptocurrencies</strong>
+            <p>Although more common in SHA-256, SHA-512 is also used in certain blockchain technologies to secure transaction data and maintain the integrity of blocks.</p>
+          </li>
+        </ul>
+    
+        <h3 style="color:#0E2431;">Pros and Cons of SHA512</h3>
+        <p><strong>Pros:</strong></p>
+        <ul>
+          <li>Strong security – resistant to collision and pre-image attacks.</li>
+          <li>Large hash size – good for high-security applications.</li>
+          <li>Widely supported – used in major libraries and protocols.</li>
+        </ul>
+    
+        <p><strong>Cons:</strong></p>
+        <ul>
+          <li>Slower than SHA-256 – more computationally intensive.</li>
+          <li>Larger output – not necessary for all applications (overkill in low-risk environments).</li>
+          <li>Not suitable for password hashing alone – should be used with salt and key stretching algorithms (e.g., bcrypt, PBKDF2).</li>
+        </ul>
+    
+        <h3 style="color:#0E2431;">Sources</h3>
+        <ul>
+          <li><a href="https://debugpointer.com/security/sha512-overview" target="_blank">https://debugpointer.com/security/sha512-overview</a></li>
+          <li><a href="https://www.codecademy.com/resources/blog/what-is-hashing/" target="_blank">https://www.codecademy.com/resources/blog/what-is-hashing/</a></li>
+          <li><a href="https://www.cisa.gov/news-events/news/understanding-digital-signatures" target="_blank">https://www.cisa.gov/news-events/news/understanding-digital-signatures</a></li>
+        </ul>
+      </div>
+    </home>
+    <script src="/index.js"></script>
+  </body>
+</html>

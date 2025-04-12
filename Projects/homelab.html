@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Connor Horning</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <style>
+        body {
+          background-color: #0E2431;
+        }
+        .card2 {
+      background-color: #F5F7FA;
+      color: #0E2431;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      max-width: 900px;
+      margin: 100px auto;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 1rem auto;
+    }
+
+    ul {
+      margin-left: 1rem;
+    }
+  </style>
+  </head>
+  <body>
+    <nav class="navbar desktop-nav" id="navbar">
+      <div class="nav-content">
+        <div class="logo">
+          <a href="/index.html">Connor Horning</a>
+        </div>
+        <ul class="nav-links">
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/articles.html">Articles</a></li>
+          <li><a href="/projects.html">Projects</a></li>
+          <li><a href="/resume.html">Resume</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+          <li><a href="/aboutme.html">About Me</a></li>
+        </ul>
+      </div>
+    </nav>
+  
+    <!-- Mobile Navbar -->
+    <nav class="mobile-nav" id="mobileNav">
+      <div class="logo">
+        <a href="/index.html">Connor Horning</a>
+      </div>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+    <ul class="mobile-menu" id="mobileMenu">
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/articles.html">Articles</a></li>
+      <li><a href="/projects.html">Projects</a></li>
+      <li><a href="/resume.html">Resume</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+      <li><a href="/aboutme.html">About Me</a></li>
+    </ul>
+    
+    
+    <home> 
+      <div class="card2">
+        <h1 style="color:#0E2431;">My Homelab</h1>
+        <h3 style="color: #0E2431;">Homelab Picture</h3>
+        <img src="/Images/homelab.jpg" alt="Homelab" style="width: 60%; max-width: 600px; display: block; margin: 2rem auto; border-radius: 8px;">
+
+       <br>
+
+       <h2 style="color:#0E2431">What is inside?</h2>
+       <ul>
+        <li><strong>Rack</strong>
+            <p>SysRacks 12U 24" Depth Rack</p>
+            <a href="https://sysracks.com/product/12u-24-depth-wall-mount-19-enclosure-srw-12-600/?utm_source=google&utm_medium=&utm_term=||location-9006581-|network-x&utm_content=&utm_campaign=19230689466_google-performance-max&gad_source=1&gclid=CjwKCAjw--K_BhB5EiwAuwYoysSdVOWyD0dVZ3DwYjj9Cm3WKUyrJu0c5IPRrHW8MFa19GNY5Stb2BoCOxgQAvD_BwE">Link to Rack</a>
+        </li>
+        <br>
+        <li><strong>Switches</strong>
+            <p>Cisco Catalyst 2950 series switch</p>
+            <p>Brocade ICX 6450-48P</p>
+            <p>Netgear GS308 8 Port Unmanaged Switch</p>
+    </li>
+    <br>
+    <li><strong>Router</strong>
+        <p>TrendNet SOHO Router</p>
+    </li>
+</br>
+    <li><strong>Voice Gateway</strong>
+        <p>Cisco VG224 Voice Gateway</p>
+    </li>
+    <br>
+    <li>
+        <strong>Servers</strong>
+        <p>HYVE Zeus SH Server</p>
+        <p>Dell Optiplex 3060 x2</p>
+        <p>Dell Optiplex 3050 x2</p>
+    </li>
+<br>
+    <li>
+        <strong>Not yet incorporated and not in picture</strong>
+        <p>Cisco VOIP Phones</p>
+        <p>Aruba Access Points</p>
+    </li>
+       </ul>
+       <br>
+
+       <ul>
+        <li>
+            <strong>What are the servers running?</strong>
+        </li>
+        <br>
+        <li>
+            <strong>HYVE ZEUS SH</strong>
+            <p>Running Proxmox</p>
+            <p>Used for some of my Microsoft Exchange Final Project</p>
+            <p><i>Not on 24/7</i></p>
+        </li>
+        <br>
+        <li>
+            <strong>Dell Optiplex 3060 #1</strong>
+            <p>Runs Proxmox as well</p>
+            <p>I have a bunch of miscellaneous stuff self hosted on here including a dashboard that I want to be run 24/7.</p>
+
+        </li>
+        <br>
+        <li>
+            <strong>Dell Optiplex 3060 #2</strong>
+            <p>Runs Windows Server 2022</p>
+            <p>I run an Active Directory / Group Policy environment to work on some Sys Admin skills.</p>
+        </li>
+       
+        <br>
+        <li>
+            <strong>Dell Optiplex 3050</strong>
+            <p>Runs Ubuntu Server</p>
+            <p>I don't use this one much at the moment. It will be used for some self hosting in the future.</p>
+        </li>
+       </ul>
+    </home>
+    <script src="/index.js"></script>
+  </body>
+</html>

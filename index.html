@@ -1,38 +1,64 @@
+<!-- Updated HTML for better mobile nav handling -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connor Horning</title>
-    <link rel="stylesheet" href="index.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connor Horning</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="icon" href="./favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <div class="container">
-        <nav>
-            <!--Navigation Bar-->
-            <a href="index.html" style="font-size: 1.2em; font-weight:bold;" style="color: gray">Home</a>
-            <a href="AboutMe.html" style="font-size: 1.2em; font-weight:bold;">About Me</a>
-            <a href="Resume.html" style="font-size: 1.2em; font-weight:bold;">Resume</a>
-            <a href="contact.html" style="font-size: 1.2em; font-weight:bold;">Contact Me</a>
-            <a href="Articles.html" style="font-size: 1.2em; font-weight:bold;">Articles</a>
-        </nav>
-    </div>    
-    <!--Making space above the main text on this page-->
-            <p> </p><br>
-            <br>
-            <br>
-            <br>
+  <!-- Desktop Navbar -->
+  <nav class="navbar desktop-nav" id="navbar">
+    <div class="nav-content">
+      <div class="logo">
+        <a href="./index.html">Connor Horning</a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./articles.html">Articles</a></li>
+        <li><a href="./projects.html">Projects</a></li>
+        <li><a href="./resume.html">Resume</a></li>
+        <li><a href="./contact.html">Contact</a></li>
+        <li><a href="./aboutme.html">About Me</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Mobile Navbar -->
+  <nav class="mobile-nav" id="mobileNav">
+    <div class="logo">
+      <a href="./index.html">Connor Horning</a>
+    </div>
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+  <ul class="mobile-menu" id="mobileMenu">
+    <li><a href="./index.html">Home</a></li>
+    <li><a href="./articles.html">Articles</a></li>
+    <li><a href="./projects.html">Projects</a></li>
+    <li><a href="./resume.html">Resume</a></li>
+    <li><a href="./contact.html">Contact</a></li>
+    <li><a href="./aboutme.html">About Me</a></li>
+  </ul>
+
+  <!-- Main content -->
+  <home>
+    <br><br><br><br><br>
+    <img src="Images/Index_Pic.jpg" style="border-radius:50%; width:200px;height:200px;object-fit:cover;">
     <br>
-            <br>
-            <br>
-    <br>
-            <img src="Images/Index_Pic.jpg" style="border-radius:50%; width:200px;height:200px;object-fit:cover;">
-            <H1>Connor Horning</H1>
-            <br>
-            <h2>Information Technology</h2><br>
-    <div class="button" id="button">
-        <div id="slide"></div>
-            <a href="Articles.html">Explore</a>
-              </div>
+    <h1 style="text-align: center;">Connor Horning</h1>
+    <h3>Information Technology</h3>
+    <br><br>
+    <a href="projects.html">
+      <button>Explore</button>
+    </a>
+  </home>
+
+  <script src="index.js"></script>
 </body>
 </html>

@@ -1,26 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Me</title>
-  <link rel="stylesheet" href="AboutMe.css">
-</head>
-<body>
-  <nav>
-    <a href="index.html" style="font-size: 1.2em; font-weight:bold;">Home</a>
-    <a href="AboutMe.html" style="font-size: 1.2em; font-weight:bold;" style="color: gray">About Me</a>
-    <a href="Resume.html" style="font-size: 1.2em; font-weight:bold;">Resume</a>
-    <a href="contact.html" style="font-size: 1.2em; font-weight:bold;">Contact Me</a>
-    <a href="Articles.html" style="font-size: 1.2em; font-weight:bold;">Articles</a>
-</nav>
-<div class="container">
-  <h1 style="text-align: center;">Connor Horning</h1>
-  <div style="text-align:center">
-  <img src="https://th.bing.com/th/id/OIP.4Kru8VQxR4Ukr5U-nt6LjwAAAA?rs=1&pid=ImgDetMain" style="border-radius:50%; width:200px;height:200px;">
-  </div> 
-  <h2>About Me</h2>
-  <p style="font-size:18px">Hello! My name is Connor Horning. I am a student at Thaddeus Stevens College of Technology and I am enrolled in the Computer and Networking Systems Administration course. I have graduated from Annville Cleona High School in 2023. I have also completed a Network Technology and Computer Repair course at the Lebanon County Career and Technology Center.</p>
-  </div>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Connor Horning</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+  </head>
+  <body>
+    <nav class="navbar desktop-nav" id="navbar">
+      <div class="nav-content">
+        <div class="logo">
+          <a href="./index.html">Connor Horning</a>
+        </div>
+        <ul class="nav-links">
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./articles.html">Articles</a></li>
+          <li><a href="./projects.html">Projects</a></li>
+          <li><a href="./resume.html">Resume</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+          <li><a href="./aboutme.html">About Me</a></li>
+        </ul>
+      </div>
+    </nav>
+  
+    <!-- Mobile Navbar -->
+    <nav class="mobile-nav" id="mobileNav">
+      <div class="logo">
+        <a href="./index.html">Connor Horning</a>
+      </div>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+    <ul class="mobile-menu" id="mobileMenu">
+      <li><a href="./index.html">Home</a></li>
+      <li><a href="./articles.html">Articles</a></li>
+      <li><a href="./projects.html">Projects</a></li>
+      <li><a href="./resume.html">Resume</a></li>
+      <li><a href="./contact.html">Contact</a></li>
+      <li><a href="./aboutme.html">About Me</a></li>
+    </ul>
+    <home> 
+      <br>
+      <br>
+      <img src="Images/AboutMe.jpg" style="border-radius:50%; width:200px;height:200px;object-fit:cover;">
+      <div class="card2">
+        <h2>About Me</h2>
+        <br>
+        <p>
+          Hello! My name is Connor Horning and I am currently a student at Thaddeus Stevens College of Technology studying Computer and Network Systems Administration. I worked as an IT intern during my time at TSCT and I am currently looking for a full time job for after I graduate in May, 2025. My career goal would be to work my way up to a network engineer position. In my freetime, I enjoy working on my homelab, playing sports, and learning new things about technology. 
+        </p>
+      </div>
+      </home>
+    <script src="index.js"></script>
+  </body>
 </html>
