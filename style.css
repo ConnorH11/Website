@@ -23,12 +23,13 @@
   }
   nav .nav-content{
     height: 100%;
+    width: 100%;
     max-width: 1200px;
-    margin: auto;
+    margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: relative;
+    padding: 0 20px
   }
   nav .logo a{
     font-weight: 500;
@@ -40,6 +41,8 @@
   }
   .nav-content .nav-links{
     display: flex;
+    gap: 1.rem;
+    list-style: none;
   }
   .nav-content .nav-links li{
     list-style: none;
@@ -271,11 +274,11 @@
   
   .pdf-viewer {
     width: 100%;
-    height: 500px;
+    height: 100vh;
     border: none;
     margin-top: 1rem;
     border-radius: 8px;
-    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
   }
 
   .read-button-container {
