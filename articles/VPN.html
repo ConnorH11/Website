@@ -1,141 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Connor Horning</title>
-    <link rel="stylesheet" href="/style.css">
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
 
-    <style>
-        body {
-          background-color: #0E2431;
-        }
-    
-        .card2 {
-          background-color: #F5F7FA;
-          color: #0E2431;
-          padding: 2rem;
-          border-radius: 12px;
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-          max-width: 900px;
-          margin: 100px auto;
-        }
-    
-        img {
-          max-width: 100%;
-          height: auto;
-          display: block;
-          margin: 1rem auto;
-        }
-    
-        ul {
-          margin-left: 1rem;
-        }
-      </style>
-  </head>
-  <body>
-    <nav class="navbar desktop-nav" id="navbar">
-      <div class="nav-content">
-        <div class="logo">
-          <a href="/index.html">Connor Horning</a>
-        </div>
-        <ul class="nav-links">
-          <li><a href="/index.html">Home</a></li>
-          <li><a href="/articles.html">Articles</a></li>
-          <li><a href="/projects.html">Projects</a></li>
-          <li><a href="/resume.html">Resume</a></li>
-          <li><a href="/contact.html">Contact</a></li>
-          <li><a href="/aboutme.html">About Me</a></li>
-        </ul>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Virtual Private Networks | Connor Horning</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../style.css">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="../index.html#home" class="logo">CH.</a>
+
+      <div class="desktop-menu">
+        <a href="../index.html#home" class="nav-link">Home</a>
+        <a href="../index.html#projects" class="nav-link">Projects</a>
+        <a href="../index.html#articles" class="nav-link active">Articles</a>
+        <a href="../index.html#about" class="nav-link">About</a>
+        <a href="../index.html#contact" class="nav-link">Contact</a>
       </div>
-    </nav>
-  
-    <!-- Mobile Navbar -->
-    <nav class="mobile-nav" id="mobileNav">
-      <div class="logo">
-        <a href="/index.html">Connor Horning</a>
-      </div>
-      <div class="hamburger" id="hamburger">
+
+      <div class="mobile-toggle" id="mobile-toggle">
         <span></span>
         <span></span>
         <span></span>
       </div>
-    </nav>
-    <ul class="mobile-menu" id="mobileMenu">
-      <li><a href="/index.html">Home</a></li>
-      <li><a href="/articles.html">Articles</a></li>
-      <li><a href="/projects.html">Projects</a></li>
-      <li><a href="/resume.html">Resume</a></li>
-      <li><a href="/contact.html">Contact</a></li>
-      <li><a href="/aboutme.html">About Me</a></li>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="../index.html#home" class="mobile-link">Home</a>
+    <a href="../index.html#projects" class="mobile-link">Projects</a>
+    <a href="../index.html#articles" class="mobile-link">Articles</a>
+    <a href="../index.html#about" class="mobile-link">About</a>
+    <a href="../index.html#contact" class="mobile-link">Contact</a>
+  </div>
+
+  <!-- Main Content -->
+  <main class="content-wrapper article-content">
+    <h1>Virtual Private Networks</h1>
+    <p class="subtitle">Research paper exploring VPN technologies, security protocols, and use cases.</p>
+
+    <h2>What is a VPN?</h2>
+    <p>A VPN (Virtual Private Network) is a service that allows you to connect to the internet securely and privately by
+      routing your connection through a server and hiding your online actions. It encrypts your data and masks your IP
+      address to keep your online activities hidden from hackers, governments, and even your internet service provider.
+    </p>
+
+    <img src="../../Images/VPN.png" alt="VPN Diagram"
+      style="width: 100%; border-radius: 8px; margin: 2rem 0; box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);">
+    <p style="text-align: center; color: var(--text-secondary); font-size: 0.9rem;"><i>Figure 1.1 - VPN Connection (Joe
+        Robinson)</i></p>
+
+    <h2>What are the different uses of a VPN?</h2>
+    <p>VPNs have many uses in both personal and professional environments:</p>
+    <ul>
+      <li><strong>Remote Work:</strong> Employees can securely access company networks and resources from home.</li>
+      <li><strong>Security on Public Wi-Fi:</strong> VPNs encrypt data on unsecured networks like those in coffee shops
+        or airports.</li>
+      <li><strong>Bypass Geo-Restrictions:</strong> VPNs can make it look like you're browsing from another country,
+        allowing access to region-restricted content.</li>
+      <li><strong>Data Privacy:</strong> Hide your browsing history from your ISP or other third parties.</li>
     </ul>
-    <home> 
-      <div class="card2">
-        <h1 style="color:#0E2431">Virtual Private Networks</h1>
-    
-        <h2 style="color:#0E2431">What is a VPN?</h2>
-        <p>A VPN (Virtual Private Network) is a service that allows you to connect to the internet securely and privately by routing your connection through a server and hiding your online actions. It encrypts your data and masks your IP address to keep your online activities hidden from hackers, governments, and even your internet service provider.</p>
-    
-        <img src="../Images/VPN.png" alt="VPN Diagram" />
-        <p style="text-align: center;"><i>Figure 1.1 - VPN Connection (Joe Robinson)</i></p>
-    
-        <h2 style="color:#0E2431">What are the different uses of a VPN?</h2>
-        <p>VPNs have many uses in both personal and professional environments:</p>
-        <ul>
-          <li><strong>Remote Work:</strong> Employees can securely access company networks and resources from home.</li>
-          <li><strong>Security on Public Wi-Fi:</strong> VPNs encrypt data on unsecured networks like those in coffee shops or airports.</li>
-          <li><strong>Bypass Geo-Restrictions:</strong> VPNs can make it look like you're browsing from another country, allowing access to region-restricted content.</li>
-          <li><strong>Data Privacy:</strong> Hide your browsing history from your ISP or other third parties.</li>
-        </ul>
-    
-        <h2 style="color:#0E2431">Downsides of VPNs</h2>
-        <ul>
-          <li><strong>Slower Internet Speeds:</strong> Due to encryption overhead and long-distance routing.</li>
-          <li><strong>Potential Logging:</strong> Some VPN providers log your data, defeating the purpose of anonymity.</li>
-          <li><strong>Cost:</strong> High-quality VPNs typically require a monthly fee.</li>
-        </ul>
-    
-        <h2 style="color:#0E2431">Pros of VPNs</h2>
-        <ul>
-          <li>Increased privacy and security while online.</li>
-          <li>Access to geo-restricted content and websites.</li>
-          <li>Secure file sharing over long distances.</li>
-        </ul>
-    
-        <h2 style="color:#0E2431">Protocols Used in VPNs</h2>
-        <p>VPNs use different tunneling protocols to secure data:</p>
-        <ul>
-          <li><strong>OpenVPN:</strong> Open-source and very secure.</li>
-          <li><strong>WireGuard:</strong> Newer, faster, and simpler protocol gaining popularity.</li>
-          <li><strong>PPTP:</strong> An older protocol that is fast but less secure.</li>
-          <li><strong>L2TP/IPsec:</strong> A combination providing better security but often slower.</li>
-        </ul>
-    
-        <h2 style="color:#0E2431">Types of VPNs</h2>
-        <ul>
-          <li><strong>Remote Access VPN:</strong> Connects a user to a private network remotely.</li>
-          <li><strong>Site-to-Site VPN:</strong> Connects entire networks to each other over the internet.</li>
-          <li><strong>SSL VPN:</strong> Commonly used through a web browser.</li>
-          <li><strong>Cloud VPN:</strong> Designed for cloud-based infrastructures and services.</li>
-        </ul>
-    
-        <h2 style="color:#0E2431">Free vs Paid VPNs</h2>
-        <p>Free VPNs often come with bandwidth limits, slower speeds, and questionable logging policies. Paid VPNs offer more robust security, faster connections, and no advertisements. It's generally recommended to choose a reputable paid provider if privacy and performance are important to you.</p>
-    
-        <h2 style="color:#0E2431">Sources</h2>
-        <ul>
-          <li><a href="https://www.howtogeek.com/133680/htg-explains-what-is-a-vpn/" target="_blank">HowToGeek</a></li>
-          <li><a href="https://nordvpn.com/blog/interesting-vpn-uses/" target="_blank">NordVPN</a></li>
-          <li><a href="http://www.tomsguide.com/news/free-vs-paid-vpn" target="_blank">Tom's Guide</a></li>
-          <li><a href="https://www.privacyaffairs.com/beginners-guide-to-vpn/" target="_blank">Privacy Affairs</a></li>
-          <li><a href="https://www.paloaltonetworks.com/cyberpedia/types-of-vpn" target="_blank">Palo Alto Networks</a></li>
-          <li><a href="https://www.techradar.com/vpn/benefits-of-vpn" target="_blank">TechRadar</a></li>
-        </ul>
-      </div>
-      
-    </home>
-    <script src="/index.js"></script>
-  </body>
+
+    <h2>Downsides of VPNs</h2>
+    <ul>
+      <li><strong>Slower Internet Speeds:</strong> Due to encryption overhead and long-distance routing.</li>
+      <li><strong>Potential Logging:</strong> Some VPN providers log your data, defeating the purpose of anonymity.</li>
+      <li><strong>Cost:</strong> High-quality VPNs typically require a monthly fee.</li>
+    </ul>
+
+    <h2>Pros of VPNs</h2>
+    <ul>
+      <li>Increased privacy and security while online.</li>
+      <li>Access to geo-restricted content and websites.</li>
+      <li>Secure file sharing over long distances.</li>
+    </ul>
+
+    <h2>Protocols Used in VPNs</h2>
+    <p>VPNs use different tunneling protocols to secure data:</p>
+    <ul>
+      <li><strong>OpenVPN:</strong> Open-source and very secure.</li>
+      <li><strong>WireGuard:</strong> Newer, faster, and simpler protocol gaining popularity.</li>
+      <li><strong>PPTP:</strong> An older protocol that is fast but less secure.</li>
+      <li><strong>L2TP/IPsec:</strong> A combination providing better security but often slower.</li>
+    </ul>
+
+    <h2>Types of VPNs</h2>
+    <ul>
+      <li><strong>Remote Access VPN:</strong> Connects a user to a private network remotely.</li>
+      <li><strong>Site-to-Site VPN:</strong> Connects entire networks to each other over the internet.</li>
+      <li><strong>SSL VPN:</strong> Commonly used through a web browser.</li>
+      <li><strong>Cloud VPN:</strong> Designed for cloud-based infrastructures and services.</li>
+    </ul>
+
+    <h2>Free vs Paid VPNs</h2>
+    <p>Free VPNs often come with bandwidth limits, slower speeds, and questionable logging policies. Paid VPNs offer
+      more robust security, faster connections, and no advertisements. It's generally recommended to choose a reputable
+      paid provider if privacy and performance are important to you.</p>
+
+    <hr>
+
+    <h3>Sources</h3>
+    <ul>
+      <li><a href="https://www.howtogeek.com/133680/htg-explains-what-is-a-vpn/" target="_blank">HowToGeek</a></li>
+      <li><a href="https://nordvpn.com/blog/interesting-vpn-uses/" target="_blank">NordVPN</a></li>
+      <li><a href="http://www.tomsguide.com/news/free-vs-paid-vpn" target="_blank">Tom's Guide</a></li>
+      <li><a href="https://www.privacyaffairs.com/beginners-guide-to-vpn/" target="_blank">Privacy Affairs</a></li>
+      <li><a href="https://www.paloaltonetworks.com/cyberpedia/types-of-vpn" target="_blank">Palo Alto Networks</a></li>
+      <li><a href="https://www.techradar.com/vpn/benefits-of-vpn" target="_blank">TechRadar</a></li>
+    </ul>
+
+  </main>
+
+  <footer>
+    <div class="content-wrapper">
+      <p style="text-align:center; padding: 2rem; color: var(--text-secondary);">&copy; 2026 Connor Horning.</p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+
 </html>

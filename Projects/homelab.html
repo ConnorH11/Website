@@ -1,217 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Connor Horning</title>
-    <link rel="stylesheet" href="/style.css">
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    <style>
-        body {
-          background-color: #0E2431;
-        }
-        .card2 {
-      background-color: #F5F7FA;
-      color: #0E2431;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      max-width: 900px;
-      margin: 100px auto;
-    }
 
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-      margin: 1rem auto;
-    }
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Homelab | Connor Horning</title>
 
-    ul {
-      margin-left: 1rem;
-    }
-  </style>
-  </head>
-  <body>
-    <nav class="navbar desktop-nav" id="navbar">
-      <div class="nav-content">
-        <div class="logo">
-          <a href="/index.html">Connor Horning</a>
-        </div>
-        <ul class="nav-links">
-          <li><a href="/index.html">Home</a></li>
-          <li><a href="/articles.html">Articles</a></li>
-          <li><a href="/projects.html">Projects</a></li>
-          <li><a href="/resume.html">Resume</a></li>
-          <li><a href="/contact.html">Contact</a></li>
-          <li><a href="/aboutme.html">About Me</a></li>
-        </ul>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../style.css">
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="../index.html#home" class="logo">CH.</a>
+
+      <div class="desktop-menu">
+        <a href="../index.html#home" class="nav-link">Home</a>
+        <a href="../index.html#projects" class="nav-link active">Projects</a>
+        <a href="../index.html#articles" class="nav-link">Articles</a>
+        <a href="../index.html#about" class="nav-link">About</a>
+        <a href="../index.html#contact" class="nav-link">Contact</a>
       </div>
-    </nav>
-  
-    <!-- Mobile Navbar -->
-    <nav class="mobile-nav" id="mobileNav">
-      <div class="logo">
-        <a href="/index.html">Connor Horning</a>
-      </div>
-      <div class="hamburger" id="hamburger">
+
+      <div class="mobile-toggle" id="mobile-toggle">
         <span></span>
         <span></span>
         <span></span>
       </div>
-    </nav>
-    <ul class="mobile-menu" id="mobileMenu">
-      <li><a href="/index.html">Home</a></li>
-      <li><a href="/articles.html">Articles</a></li>
-      <li><a href="/projects.html">Projects</a></li>
-      <li><a href="/resume.html">Resume</a></li>
-      <li><a href="/contact.html">Contact</a></li>
-      <li><a href="/aboutme.html">About Me</a></li>
-    </ul>
-    
-    
-<home> 
-  <div class="card2">
-    <h1 style="color:#0E2431;">My Homelab</h1>
+    </div>
+  </nav>
 
-    <p>
-      This is my personal homelab that I use to learn, break things, fix them, and
-      experiment with real-world networking and server concepts. It’s constantly
-      changing as I add new services or rework the setup.
-    </p>
-
-    <img 
-      src="/Images/homelab.jpg" 
-      alt="Homelab" 
-      style="width: 65%; max-width: 650px; display: block; margin: 2rem auto; border-radius: 8px;"
-    >
-
-    <h2 style="color:#0E2431;">What’s Inside the Rack</h2>
-
-    <ul>
-      <li>
-        <strong>Rack</strong>
-        <p>SysRacks 12U 24&quot; Depth Wall-Mount Rack</p>
-        <a href="https://sysracks.com/product/12u-24-depth-wall-mount-19-enclosure-srw-12-600/?utm_source=google&utm_medium=&utm_term=||location-9006581-|network-x&utm_content=&utm_campaign=19230689466_google-performance-max">
-          View Rack
-        </a>
-      </li>
-
-      <br>
-
-      <li>
-        <strong>Switching</strong>
-        <p>Cisco Catalyst 2950 Series</p>
-        <p>Netgear GS308EP 8-Port Managed PoE+ Switch</p>
-      </li>
-
-      <br>
-
-      <li>
-        <strong>Routing</strong>
-        <p>OPNsense Mini Router (Primary)</p>
-        <p>TrendNet SOHO Router (used as a WAP)</p>
-      </li>
-
-      <br>
-
-      <li>
-        <strong>Servers</strong>
-        <p>HYVE Zeus SH</p>
-        <p>2× Dell Optiplex 3060</p>
-      </li>
-
-      <br>
-
-      <li>
-        <strong>Storage</strong>
-        <p>UGREEN DXP4800+</p>
-        <p>3× 4TB HDDs</p>
-      </li>
-
-      <br>
-
-      <li>
-        <strong>Not Yet Installed</strong>
-        <p>Cisco VoIP Phones</p>
-        <p>Aruba Access Points</p>
-      </li>
-    </ul>
-
-    <h2 style="color:#0E2431; margin-top: 3rem;">What the Servers Are Running</h2>
-
-    <ul>
-      <li>
-        <strong>HYVE Zeus SH</strong>
-        <p>Runs Proxmox</p>
-        <p>Previously used for my Microsoft Exchange final project</p>
-        <p><i>Not powered on 24/7</i></p>
-      </li>
-
-      <br>
-
-      <li>
-        <strong>Dell Optiplex 3060 #1</strong>
-        <p>Runs Proxmox</p>
-        <p>
-          Hosts several VMs including Glance (dashboard), Docker containers
-          (Portainer, N8N), and AdGuard Home.
-        </p>
-      </li>
-
-      <br>
-
-      <li>
-        <strong>Dell Optiplex 3060 #2</strong>
-        <p>Runs Windows Server 2022</p>
-        <p>
-          Used for an Active Directory and Group Policy environment to practice
-          system administration skills. It also hosts subnetsuite.com, which is
-          exposed to the internet through a Cloudflare Tunnel.
-        </p>
-      </li>
-
-      <br>
-
-      <li>
-        <strong>UGREEN NAS</strong>
-        <p>Runs Jellyfin and additional Docker containers</p>
-        <p>
-          Primarily used for backups and media storage for Jellyfin, along with
-          general file storage for the homelab.
-        </p>
-      </li>
-    </ul>
-
-    <h2 style="color:#0E2431; margin-top: 3rem;">Network Topology</h2>
-
-    <img 
-      src="/Images/diagram.png" 
-      alt="Network Diagram" 
-      style="width: 65%; max-width: 650px; display: block; margin: 2rem auto; border-radius: 8px;"
-    >
-
-    <p>
-      The Comcast modem in our living room feeds into the TP-Link Deco mesh system.
-      One Deco unit sits near the homelab and provides the upstream connection.
-    </p>
-    <br>
-    <p>
-      From there, a Deco port connects to the WAN interface on my OPNsense router.
-      The LAN side of OPNsense feeds into the managed Netgear switch, which connects
-      my servers and NAS.
-    </p>
-    <br>
-    <p>
-      The wireless router is connected to the WLAN interface on OPNsense and functions
-      purely as a wireless access point (doesn't do DHCP or routing) keeping all network control
-      centralized on OPNsense.
-    </p>
-
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="../index.html#home" class="mobile-link">Home</a>
+    <a href="../index.html#projects" class="mobile-link">Projects</a>
+    <a href="../index.html#articles" class="mobile-link">Articles</a>
+    <a href="../index.html#about" class="mobile-link">About</a>
+    <a href="../index.html#contact" class="mobile-link">Contact</a>
   </div>
-</home>
 
-    <script src="/index.js"></script>
-  </body>
+  <!-- Main Content -->
+  <main class="content-wrapper article-content">
+    <h1>My Homelab</h1>
+    <p class="subtitle">A playground for learning, breaking, and fixing real-world networking concepts.</p>
+
+    <p>This is my personal homelab that I use to learn, break things, fix them, and experiment with real-world
+      networking and server concepts. It’s constantly changing as I add new services or rework the setup.</p>
+
+    <img src="../../Images/homelab.jpg" alt="Homelab Rack"
+      style="width: 100%; border-radius: 8px; margin: 2rem 0; box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);">
+
+    <hr>
+
+    <h2>What’s Inside the Rack</h2>
+
+    <h4>Rack</h4>
+    <p>SysRacks 12U 24" Depth Wall-Mount Rack. <a
+        href="https://sysracks.com/product/12u-24-depth-wall-mount-19-enclosure-srw-12-600/" target="_blank">View
+        Product</a></p>
+
+    <h4>Switching</h4>
+    <ul>
+      <li>Cisco Catalyst 2950 Series</li>
+      <li>Netgear GS308EP 8-Port Managed PoE+ Switch</li>
+    </ul>
+
+    <h4>Routing</h4>
+    <ul>
+      <li>OPNsense Mini Router (Primary)</li>
+      <li>TrendNet SOHO Router (used as a WAP)</li>
+    </ul>
+
+    <h4>Servers</h4>
+    <ul>
+      <li>HYVE Zeus SH</li>
+      <li>2× Dell Optiplex 3060</li>
+    </ul>
+
+    <h4>Storage</h4>
+    <ul>
+      <li>UGREEN DXP4800+</li>
+      <li>3× 4TB HDDs</li>
+    </ul>
+
+    <h4>Not Yet Installed</h4>
+    <ul>
+      <li>Cisco VoIP Phones</li>
+      <li>Aruba Access Points</li>
+    </ul>
+
+    <hr>
+
+    <h2>What the Servers Are Running</h2>
+
+    <h4>HYVE Zeus SH</h4>
+    <ul>
+      <li>Runs Proxmox</li>
+      <li>Previously used for my Microsoft Exchange final project</li>
+      <li><i>Not powered on 24/7</i></li>
+    </ul>
+
+    <h4>Dell Optiplex 3060 #1</h4>
+    <ul>
+      <li>Runs Proxmox</li>
+      <li>Hosts several VMs including Glance (dashboard), Docker containers (Portainer, N8N), and AdGuard Home.</li>
+    </ul>
+
+    <h4>Dell Optiplex 3060 #2</h4>
+    <ul>
+      <li>Runs Windows Server 2022</li>
+      <li>Used for an Active Directory and Group Policy environment. Also hosts subnetsuite.com via Cloudflare Tunnel.
+      </li>
+    </ul>
+
+    <h4>UGREEN NAS</h4>
+    <ul>
+      <li>Runs Jellyfin and additional Docker containers</li>
+      <li>Primarily used for backups, media storage, and general file storage.</li>
+    </ul>
+
+    <hr>
+
+    <h2>Network Topology</h2>
+    <img src="../../Images/diagram.png" alt="Network Diagram"
+      style="width: 100%; border-radius: 8px; margin: 2rem 0; box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);">
+
+    <p>The Comcast modem in our living room feeds into the TP-Link Deco mesh system. One Deco unit sits near the homelab
+      and provides the upstream connection.</p>
+
+    <p>From there, a Deco port connects to the WAN interface on my OPNsense router. The LAN side of OPNsense feeds into
+      the managed Netgear switch, which connects my servers and NAS.</p>
+
+    <p>The wireless router is connected to the WLAN interface on OPNsense and functions purely as a wireless access
+      point (no DHCP/routing), keeping detailed network control centralized on OPNsense.</p>
+
+  </main>
+
+  <footer>
+    <div class="content-wrapper">
+      <p style="text-align:center; padding: 2rem; color: var(--text-secondary);">&copy; 2026 Connor Horning.</p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+
 </html>

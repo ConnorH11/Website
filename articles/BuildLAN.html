@@ -1,58 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Connor Horning</title>
-    <link rel="stylesheet" href="/style.css">
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
-  </head>
-  <body>
-    <nav class="navbar desktop-nav" id="navbar">
-      <div class="nav-content">
-        <div class="logo">
-          <a href="/index.html">Connor Horning</a>
-        </div>
-        <ul class="nav-links">
-          <li><a href="/index.html">Home</a></li>
-          <li><a href="/articles.html">Articles</a></li>
-          <li><a href="/projects.html">Projects</a></li>
-          <li><a href="/resume.html">Resume</a></li>
-          <li><a href="/contact.html">Contact</a></li>
-          <li><a href="/aboutme.html">About Me</a></li>
-        </ul>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Build LAN | Connor Horning</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../style.css">
+
+  <style>
+    .pdf-container {
+      width: 100%;
+      height: 80vh;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);
+      margin-top: 2rem;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="../index.html#home" class="logo">CH.</a>
+
+      <div class="desktop-menu">
+        <a href="../index.html#home" class="nav-link">Home</a>
+        <a href="../index.html#projects" class="nav-link">Projects</a>
+        <a href="../index.html#articles" class="nav-link active">Articles</a>
+        <a href="../index.html#about" class="nav-link">About</a>
+        <a href="../index.html#contact" class="nav-link">Contact</a>
       </div>
-    </nav>
-  
-    <!-- Mobile Navbar -->
-    <nav class="mobile-nav" id="mobileNav">
-      <div class="logo">
-        <a href="/index.html">Connor Horning</a>
-      </div>
-      <div class="hamburger" id="hamburger">
+
+      <div class="mobile-toggle" id="mobile-toggle">
         <span></span>
         <span></span>
         <span></span>
       </div>
-    </nav>
-    <ul class="mobile-menu" id="mobileMenu">
-      <li><a href="/index.html">Home</a></li>
-      <li><a href="/articles.html">Articles</a></li>
-      <li><a href="/projects.html">Projects</a></li>
-      <li><a href="/resume.html">Resume</a></li>
-      <li><a href="/contact.html">Contact</a></li>
-      <li><a href="/aboutme.html">About Me</a></li>
-    </ul>
-    
-    
-    <home> 
-      <div class="card2">
-        <h2>Build LAN</h2>
-        <iframe src="/PDF/BuildLAN.pdf" class="pdf-viewer" title="PDF Viewer"></iframe>
-      </div>
-      
-    </home>
-    <script src="/index.js"></script>
-  </body>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="../index.html#home" class="mobile-link">Home</a>
+    <a href="../index.html#projects" class="mobile-link">Projects</a>
+    <a href="../index.html#articles" class="mobile-link">Articles</a>
+    <a href="../index.html#about" class="mobile-link">About</a>
+    <a href="../index.html#contact" class="mobile-link">Contact</a>
+  </div>
+
+  <!-- Main Content -->
+  <main class="content-wrapper article-content">
+    <h1>Build LAN</h1>
+    <p class="subtitle">Network design proposal for a financial department expansion.</p>
+
+    <div class="pdf-container">
+      <iframe src="../../PDF/BuildLAN.pdf#toolbar=0&navpanes=0&view=FitH" title="Build LAN PDF"></iframe>
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="content-wrapper">
+      <p style="text-align:center; padding: 2rem; color: var(--text-secondary);">&copy; 2026 Connor Horning.</p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+
 </html>

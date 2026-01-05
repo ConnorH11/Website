@@ -4,60 +4,222 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Connor Horning</title>
-  <link rel="stylesheet" href="./style.css">
-  <link rel="icon" href="./favicon.ico" type="image/x-icon">
+  <title>Resume | Connor Horning</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+  <!-- <link rel="icon" href="favicon.ico" type="image/x-icon"> -->
+  <style>
+    .pdf-container {
+      width: 100%;
+      height: 100vh;
+      /* Full height for resume */
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);
+      margin-top: 2rem;
+      background: #fff;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .download-btn {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.8rem 1.5rem;
+      background-color: #64ffda !important;
+      color: #0a192f !important;
+      font-weight: 700;
+      border: 1px solid #64ffda;
+      border-radius: 4px;
+      text-decoration: none;
+      z-index: 10;
+      transition: var(--transition);
+    }
+
+    .download-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(100, 255, 218, 0.3);
+    }
+  </style>
 </head>
 
 <body>
-  <nav class="navbar desktop-nav" id="navbar">
-    <div class="nav-content">
-      <div class="logo">
-        <a href="./index.html">Connor Horning</a>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html#home" class="logo">CH.</a>
+
+      <div class="desktop-menu">
+        <a href="index.html#home" class="nav-link">Home</a>
+        <a href="index.html#projects" class="nav-link">Projects</a>
+        <a href="index.html#articles" class="nav-link">Articles</a>
+        <a href="index.html#about" class="nav-link active">About</a>
+        <a href="index.html#contact" class="nav-link">Contact</a>
       </div>
-      <ul class="nav-links">
-        <li><a href="./index.html">Home</a></li>
-        <li><a href="./articles.html">Articles</a></li>
-        <li><a href="./projects.html">Projects</a></li>
-        <li><a href="./resume.html">Resume</a></li>
-        <li><a href="./contact.html">Contact</a></li>
-        <li><a href="./aboutme.html">About Me</a></li>
-      </ul>
+
+      <div class="mobile-toggle" id="mobile-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
   </nav>
 
-  <!-- Mobile Navbar -->
-  <nav class="mobile-nav" id="mobileNav">
-    <div class="logo">
-      <a href="./index.html">Connor Horning</a>
-    </div>
-    <div class="hamburger" id="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-  </nav>
-  <ul class="mobile-menu" id="mobileMenu">
-    <li><a href="./index.html">Home</a></li>
-    <li><a href="./articles.html">Articles</a></li>
-    <li><a href="./projects.html">Projects</a></li>
-    <li><a href="./resume.html">Resume</a></li>
-    <li><a href="./contact.html">Contact</a></li>
-    <li><a href="./aboutme.html">About Me</a></li>
-  </ul>
-
-
-  <div class="home-container">
-    <br>
-    <br>
-    <div class="card2">
-      <h2>My Resume</h2>
-      <iframe src="/Resume/Resume.pdf" class="pdf-viewer" title="PDF Viewer"></iframe>
-    </div>
-
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index.html#home" class="mobile-link">Home</a>
+    <a href="index.html#projects" class="mobile-link">Projects</a>
+    <a href="index.html#articles" class="mobile-link">Articles</a>
+    <a href="index.html#about" class="mobile-link">About</a>
+    <a href="index.html#contact" class="mobile-link">Contact</a>
   </div>
-  <script src="index.js"></script>
+
+  <!-- Main Content -->
+  <main class="content-wrapper article-content">
+    <h1>My Resume</h1>
+    <p class="subtitle">A closer look at my professional experience, skills, and education.</p>
+
+    <!-- Download Button -->
+    <div style="text-align: center; margin-bottom: 3rem;">
+      <a href="Resume/Resume.pdf" target="_blank" class="download-btn">Download PDF Version</a>
+    </div>
+
+    <div class="resume-section">
+
+      <!-- Experience -->
+      <!-- Experience -->
+      <h2 style="margin-top: 0; margin-bottom: 2rem;">Professional Experience</h2>
+      <div class="timeline">
+        <!-- Job 1 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <h3>IT Support Specialist</h3>
+              <span class="timeline-date">June 2025 - Present</span>
+            </div>
+            <div class="timeline-org">Royer's Flowers and Gifts</div>
+            <div class="timeline-content">
+              <ul>
+                <li>Provided tech support via phone, email, and in person.</li>
+                <li>Configured new printers, computers, and firewalls.</li>
+                <li>Performed routine maintenance on the electronics at multiple locations.</li>
+                <li>Created project proposals.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Job 2 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <h3>IT Intern</h3>
+              <span class="timeline-date">Oct 2023 - May 2025</span>
+            </div>
+            <div class="timeline-org">Thaddeus Stevens College of Technology</div>
+            <div class="timeline-content">
+              <ul>
+                <li>Installed application software, upgrades, and drivers.</li>
+                <li>Provided end-user troubleshooting and desktop support.</li>
+                <li>Terminated cables and punched down patch panels to connect workstations to the internet.</li>
+                <li>Performed reinstallations of Windows 10.</li>
+                <li>Assisted in setting up and configuring new hardware.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Education -->
+      <h2>Education</h2>
+      <div class="timeline">
+        <!-- Edu 1 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <h3>Associate of Applied Science</h3>
+              <span class="timeline-date">Oct 2023 - May 2025</span>
+            </div>
+            <div class="timeline-org">Thaddeus Stevens College of Technology</div>
+            <div class="timeline-content">
+              <p>Computer & Network Systems Administration</p>
+              <ul>
+                <li>Dean's List Recognition</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- Edu 2 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <h3>Certificate of Completion</h3>
+              <span class="timeline-date">Aug 2021 - May 2023</span>
+            </div>
+            <div class="timeline-org">Lebanon County Career and Technology Center</div>
+            <div class="timeline-content">
+              <p>Network Technology / Computer Repair</p>
+              <ul>
+                <li>Above and Beyond Award</li>
+                <li>3rd Place, Districts Skills USA, Information Technology Services (2023)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Certifications -->
+      <h2>Certifications</h2>
+      <div class="cert-grid">
+        <div class="cert-card">
+          <span class="cert-icon">📜</span>
+          <h3>CompTIA Network+</h3>
+        </div>
+        <div class="cert-card">
+          <span class="cert-icon">🎓</span>
+          <h3>Google IT Support Professional</h3>
+        </div>
+        <div class="cert-card" style="border: 1px dashed var(--accent);">
+          <span class="cert-icon">⏳</span>
+          <h3>CCNA</h3>
+          <p style="color: var(--text-secondary); margin-top: 5px;">(In Progress)</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Optional PDF Fallback (Hidden/Small) -->
+    <!-- <div class="pdf-container" style="height: 400px; margin-top: 4rem; opacity: 0.8;">
+      <h3 style="text-align: center; margin-bottom: 1rem;">Original PDF</h3>
+      <iframe src="Resume/Resume.pdf#toolbar=0&navpanes=0" title="Connor Horning Resume"></iframe>
+    </div> -->
+
+  </main>
+
+  <footer>
+    <div class="content-wrapper">
+      <p style="text-align:center; padding: 2rem; color: var(--text-secondary);">&copy; 2026 Connor Horning.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 
 </html>

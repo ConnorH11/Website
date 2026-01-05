@@ -1,64 +1,393 @@
-<!-- Updated HTML for better mobile nav handling -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Connor Horning</title>
-  <link rel="stylesheet" href="./style.css">
-  <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connor Horning | Developer</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon -->
+    <!-- <link rel="icon" href="favicon.ico" type="image/x-icon"> -->
 </head>
+
 <body>
-  <!-- Desktop Navbar -->
-  <nav class="navbar desktop-nav" id="navbar">
-    <div class="nav-content">
-      <div class="logo">
-        <a href="./index.html">Connor Horning</a>
-      </div>
-      <ul class="nav-links">
-        <li><a href="./index.html">Home</a></li>
-        <li><a href="./articles.html">Articles</a></li>
-        <li><a href="./projects.html">Projects</a></li>
-        <li><a href="./resume.html">Resume</a></li>
-        <li><a href="./contact.html">Contact</a></li>
-        <li><a href="./aboutme.html">About Me</a></li>
-      </ul>
-    </div>
-  </nav>
 
-  <!-- Mobile Navbar -->
-  <nav class="mobile-nav" id="mobileNav">
-    <div class="logo">
-      <a href="./index.html">Connor Horning</a>
-    </div>
-    <div class="hamburger" id="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-  </nav>
-  <ul class="mobile-menu" id="mobileMenu">
-    <li><a href="./index.html">Home</a></li>
-    <li><a href="./articles.html">Articles</a></li>
-    <li><a href="./projects.html">Projects</a></li>
-    <li><a href="./resume.html">Resume</a></li>
-    <li><a href="./contact.html">Contact</a></li>
-    <li><a href="./aboutme.html">About Me</a></li>
-  </ul>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="logo">CH.</a>
 
-  <!-- Main content -->
-  <div class="home-container">
-    <br><br><br><br><br>
-    <img src="Images/Index_Pic.jpg" loading="eager" style="border-radius:50%; width:200px;height:200px;object-fit:cover;">
-    <br>
-    <h1 style="text-align: center;">Connor Horning</h1>
-    <h3>Information Technology</h3>
-    <br><br>
-    <a href="projects.html">
-      <button>Explore</button>
-    </a>
-  </div>
+            <div class="desktop-menu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#articles" class="nav-link">Articles</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
 
-  <script src="index.js"></script>
+            <div class="mobile-toggle" id="mobile-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="#home" class="mobile-link">Home</a>
+        <a href="#projects" class="mobile-link">Projects</a>
+        <a href="#articles" class="mobile-link">Articles</a>
+        <a href="#about" class="mobile-link">About</a>
+        <a href="#contact" class="mobile-link">Contact</a>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero-section hidden-section">
+            <div class="content-wrapper hero-grid">
+                <div class="hero-text">
+                    <p class="eyebrow">Hello, I'm</p>
+                    <h1 class="hero-title">Connor Horning</h1>
+                    <p class="hero-subtitle">Information Technology & Development</p>
+                    <div class="cta-group">
+                        <a href="#projects" class="btn btn-primary">View Work</a>
+                        <a href="#contact" class="btn btn-outline">Contact Me</a>
+                    </div>
+                </div>
+                <!-- Hero Image -->
+                <div class="hero-visual">
+                    <img src="Images/Index_Pic.jpg" alt="Connor Horning" class="profile-img">
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section hidden-section">
+            <div class="content-wrapper">
+                <h2 class="section-title">Projects</h2>
+                <div class="projects-grid">
+
+                    <!-- Project 1 -->
+                    <div class="project-card" onclick="location.href='Projects/calculator.html';"
+                        style="cursor: pointer;">
+                        <img src="Images/project_subnet.png" alt="Subnet Suite"
+                            style="width: 100%; height: 200px; object-fit: cover;">
+                        <div class="card-content">
+                            <h3>Subnet Suite</h3>
+                            <p>CNSA Capstone Project - A comprehensive subnetting calculator supporting FLSM, VLSM,
+                                Supernetting, and more.</p>
+                            <a href="Projects/calculator.html" class="card-link">Explore &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="project-card" onclick="location.href='Projects/homelab.html';" style="cursor: pointer;">
+                        <img src="Images/project_homelab.png" alt="My Homelab"
+                            style="width: 100%; height: 200px; object-fit: cover;">
+                        <div class="card-content">
+                            <h3>My Homelab</h3>
+                            <p>A detailed documentation of my personal homelab infrastructure and services running
+                                within it.</p>
+                            <a href="Projects/homelab.html" class="card-link">Explore &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="project-card" onclick="location.href='Projects/incus.html';" style="cursor: pointer;">
+                        <img src="Images/project_cloud.png" alt="Incus Deployment"
+                            style="width: 100%; height: 200px; object-fit: cover;">
+                        <div class="card-content">
+                            <h3>Incus Deployment</h3>
+                            <p>Automated deployment of Incus containers using OpenTofu, including user provisioning and
+                                Tailscale integration.</p>
+                            <a href="Projects/incus.html" class="card-link">Explore &rarr;</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Articles Section -->
+        <section id="articles" class="section hidden-section">
+            <div class="content-wrapper">
+                <h2 class="section-title">Latest Articles</h2>
+                <div class="articles-list">
+
+                    <article class="article-item" onclick="location.href='Articles/Transactional.html';">
+                        <span class="date">Apr 2025</span>
+                        <div class="article-info">
+                            <h3>Transactional Email</h3>
+                            <p>Analysis of transactional email services to optimize company communications.</p>
+                        </div>
+                        <a href="Articles/Transactional.html" class="read-more">Read</a>
+                    </article>
+
+                    <article class="article-item" onclick="location.href='Articles/Proposal.html';">
+                        <span class="date">Dec 2024</span>
+                        <div class="article-info">
+                            <h3>Cloud Migration Proposal</h3>
+                            <p>Hardware refresh strategy focusing on cloud migration vs on-prem replacement.</p>
+                        </div>
+                        <a href="Articles/Proposal.html" class="read-more">Read</a>
+                    </article>
+
+                    <article class="article-item" onclick="location.href='Articles/SHA512.html';">
+                        <span class="date">May 2024</span>
+                        <div class="article-info">
+                            <h3>SHA512 Encryption</h3>
+                            <p>Technical research assignment analyzing the SHA512 hashing algorithm.</p>
+                        </div>
+                        <a href="Articles/SHA512.html" class="read-more">Read</a>
+                    </article>
+
+                    <article class="article-item" onclick="location.href='Articles/VPN.html';">
+                        <span class="date">May 2024</span>
+                        <div class="article-info">
+                            <h3>Virtual Private Networks</h3>
+                            <p>Research paper exploring VPN technologies and security protocols.</p>
+                        </div>
+                        <a href="Articles/VPN.html" class="read-more">Read</a>
+                    </article>
+
+                    <article class="article-item" onclick="location.href='Articles/BuildLAN.html';">
+                        <span class="date">Nov 2023</span>
+                        <div class="article-info">
+                            <h3>Build LAN</h3>
+                            <p>Network design proposal for a financial department expansion.</p>
+                        </div>
+                        <a href="Articles/BuildLAN.html" class="read-more">Read</a>
+                    </article>
+
+                </div>
+                <!-- Experience/Resume Section -->
+                <section id="experience" class="section hidden-section">
+                    <div class="content-wrapper">
+                        <h2 class="section-title">Resume</h2>
+
+                        <div class="resume-section">
+                            <!-- Tabs -->
+                            <div class="resume-tabs">
+                                <button class="tab-btn active"
+                                    onclick="openTab(event, 'experience-tab')">Experience</button>
+                                <button class="tab-btn" onclick="openTab(event, 'education-tab')">Education</button>
+                                <button class="tab-btn" onclick="openTab(event, 'certs-tab')">Certifications</button>
+                            </div>
+
+                            <!-- Experience Tab -->
+                            <div id="experience-tab" class="tab-content active">
+                                <div class="timeline">
+                                    <!-- Job 1 -->
+                                    <div class="timeline-item">
+                                        <div class="timeline-dot"></div>
+                                        <div class="timeline-card">
+                                            <div class="timeline-header">
+                                                <h3>IT Support Specialist</h3>
+                                                <span class="timeline-date">June 2025 - Present</span>
+                                            </div>
+                                            <div class="timeline-org">Royer's Flowers and Gifts</div>
+                                            <div class="timeline-content">
+                                                <ul>
+                                                    <li>Provided tech support via phone, email, and in person.</li>
+                                                    <li>Configured new printers, computers, and firewalls.</li>
+                                                    <li>Performed routine maintenance on the electronics at multiple
+                                                        locations.</li>
+                                                    <li>Created project proposals.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Job 2 -->
+                                    <div class="timeline-item">
+                                        <div class="timeline-dot"></div>
+                                        <div class="timeline-card">
+                                            <div class="timeline-header">
+                                                <h3>IT Intern</h3>
+                                                <span class="timeline-date">Oct 2023 - May 2025</span>
+                                            </div>
+                                            <div class="timeline-org">Thaddeus Stevens College of Technology</div>
+                                            <div class="timeline-content">
+                                                <ul>
+                                                    <li>Installed application software, upgrades, and drivers.</li>
+                                                    <li>Provided end-user troubleshooting and desktop support.</li>
+                                                    <li>Terminated cables and punched down patch panels to connect
+                                                        workstations to the internet.</li>
+                                                    <li>Performed reinstallations of Windows 10.</li>
+                                                    <li>Assisted in setting up and configuring new hardware.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Education Tab -->
+                            <div id="education-tab" class="tab-content">
+                                <div class="timeline">
+                                    <!-- Edu 1 -->
+                                    <div class="timeline-item">
+                                        <div class="timeline-dot"></div>
+                                        <div class="timeline-card">
+                                            <div class="timeline-header">
+                                                <h3>Associate of Applied Science</h3>
+                                                <span class="timeline-date">Oct 2023 - May 2025</span>
+                                            </div>
+                                            <div class="timeline-org">Thaddeus Stevens College of Technology</div>
+                                            <div class="timeline-content">
+                                                <p>Computer & Network Systems Administration</p>
+                                                <ul>
+                                                    <li>Dean's List Recognition</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Edu 2 -->
+                                    <div class="timeline-item">
+                                        <div class="timeline-dot"></div>
+                                        <div class="timeline-card">
+                                            <div class="timeline-header">
+                                                <h3>Certificate of Completion</h3>
+                                                <span class="timeline-date">Aug 2021 - May 2023</span>
+                                            </div>
+                                            <div class="timeline-org">Lebanon County Career and Technology Center</div>
+                                            <div class="timeline-content">
+                                                <p>Network Technology / Computer Repair</p>
+                                                <ul>
+                                                    <li>Above and Beyond Award</li>
+                                                    <li>3rd Place, Districts Skills USA, Information Technology Services
+                                                        (2023)</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Certifications Tab -->
+                            <div id="certs-tab" class="tab-content">
+                                <div class="cert-grid">
+                                    <div class="cert-card">
+                                        <span class="cert-icon">📜</span>
+                                        <h3>CompTIA Network+</h3>
+                                    </div>
+                                    <div class="cert-card">
+                                        <span class="cert-icon">🎓</span>
+                                        <h3>Google IT Support Professional</h3>
+                                    </div>
+                                    <div class="cert-card" style="border: 1px dashed var(--accent);">
+                                        <span class="cert-icon">⏳</span>
+                                        <h3>CCNA</h3>
+                                        <p style="color: var(--text-secondary); margin-top: 5px;">(In Progress)</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div style="text-align: center; margin-top: 3rem;">
+                                <a href="resume.html" class="btn btn-primary">View Full Resume Page</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+
+                <!-- About Section -->
+                <section id="about" class="section hidden-section">
+                    <div class="content-wrapper two-col">
+                        <div class="about-text">
+                            <h2 class="section-title">About Me</h2>
+                            <p>Hello! My name is Connor Horning. I am an IT Support Specialist at Royer's Flowers and
+                                Gifts and
+                                a graduate of Thaddeus Stevens College of Technology with an Associate's Degree in
+                                Computer and
+                                Network Systems Administration.</p>
+                            <p>My career goal is to become a network engineer. In my free time, I enjoy working on my
+                                homelab,
+                                playing sports, and exploring new technologies.</p>
+
+                        </div>
+                        <div class="about-image">
+                            <img src="Images/AboutMe.jpg" alt="Connor Horning" class="profile-img">
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Contact Section -->
+                <section id="contact" class="section hidden-section">
+                    <div class="content-wrapper centered">
+                        <h2 class="section-title">Get In Touch</h2>
+                        <p class="contact-text">I'm currently open to new opportunities and collaborations. Reach out
+                            via email
+                            or phone!</p>
+
+                        <div class="contact-grid">
+                            <div class="contact-card">
+                                <div class="contact-card-icon">📧</div>
+                                <h3>Email</h3>
+                                <a href="mailto:cwhorning13@gmail.com">cwhorning13@gmail.com</a>
+                            </div>
+
+                            <div class="contact-card">
+                                <div class="contact-card-icon">📱</div>
+                                <h3>Phone</h3>
+                                <a href="tel:+17178758588">+1 (717) 875-8588</a>
+                            </div>
+                        </div>
+
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/cwhorning" target="_blank"
+                                class="social-icon">LinkedIn</a>
+                            <a href="https://github.com/ConnorH11" target="_blank" class="social-icon">GitHub</a>
+                            <a href="https://www.instagram.com/connorhorning24/" target="_blank" class="social-icon"
+                                style="display: none;">Instagram</a> <!-- Hidden as per request -->
+                            <a href="https://www.credly.com/users/connor-horning" target="_blank"
+                                class="social-icon">Credly</a>
+                        </div>
+                    </div>
+                </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Connor Horning.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabContent, tabBtns;
+
+            // Hide all tab content
+            tabContent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabContent.length; i++) {
+                tabContent[i].style.display = "none";
+                tabContent[i].classList.remove("active");
+            }
+
+            // Remove active class from buttons
+            tabBtns = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tabBtns.length; i++) {
+                tabBtns[i].className = tabBtns[i].className.replace(" active", "");
+            }
+
+            // Show current tab and add active class to button
+            document.getElementById(tabName).style.display = "block";
+            setTimeout(() => {
+                document.getElementById(tabName).classList.add("active");
+            }, 10);
+            evt.currentTarget.className += " active";
+        }
+    </script>
 </body>
+
 </html>
