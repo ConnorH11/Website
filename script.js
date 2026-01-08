@@ -33,27 +33,43 @@ document.addEventListener('DOMContentLoaded', () => {
     const hiddenSections = document.querySelectorAll('.hidden-section');
     hiddenSections.forEach((el) => observer.observe(el));
 
-    // Active Link Highlighting
-    const sections = document.querySelectorAll('section');
+    // Active Link Highlighting - Improved scroll-spy
+    const navSections = ['home', 'projects', 'articles', 'experience', 'about', 'contact'];
     const navLinks = document.querySelectorAll('.nav-link');
+    const mobileNavLinks = document.querySelectorAll('.mobile-link');
 
-    window.addEventListener('scroll', () => {
-        let current = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            if (pageYOffset >= (sectionTop - 200)) {
-                current = section.getAttribute('id');
+    function updateActiveNav() {
+        const scrollPos = window.scrollY + window.innerHeight * 0.4;
+        let currentSection = 'home';
+
+        // Find the nav section we're currently in or past
+        for (let i = navSections.length - 1; i >= 0; i--) {
+            const section = document.getElementById(navSections[i]);
+            if (section && scrollPos >= section.offsetTop) {
+                currentSection = navSections[i];
+                break;
             }
-        });
+        }
 
+        // Update desktop nav links
         navLinks.forEach(link => {
             link.classList.remove('active');
-            if (link.getAttribute('href').includes(current)) {
+            if (link.getAttribute('href') === `#${currentSection}`) {
                 link.classList.add('active');
             }
         });
-    });
+
+        // Update mobile nav links
+        mobileNavLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${currentSection}`) {
+                link.classList.add('active');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', updateActiveNav);
+    updateActiveNav(); // Initial call
 
     // Mobile Menu
     const mobileToggle = document.getElementById('mobile-toggle');

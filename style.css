@@ -93,19 +93,22 @@ h3 {
     transform: translateY(0);
 }
 
-/* Navigation */
+/* Navigation - Enhanced Glassmorphism */
 .navbar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: var(--nav-height);
-    background: rgba(10, 25, 47, 0.85);
-    backdrop-filter: blur(10px);
+    background: rgba(10, 25, 47, 0.9);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     z-index: 1000;
     display: flex;
     align-items: center;
     box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);
+    border-bottom: 1px solid rgba(100, 255, 218, 0.1);
+    transition: var(--transition);
 }
 
 .nav-container {
@@ -123,6 +126,11 @@ h3 {
     font-size: 1.8rem;
     font-weight: bold;
     color: var(--accent);
+    transition: var(--transition);
+}
+
+.logo:hover {
+    text-shadow: 0 0 20px var(--accent-glow);
 }
 
 .desktop-menu {
@@ -133,6 +141,24 @@ h3 {
 .nav-link {
     font-size: 0.9rem;
     color: var(--text-secondary);
+    position: relative;
+    padding-bottom: 4px;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
 }
 
 .nav-link:hover,
@@ -232,34 +258,41 @@ h3 {
     }
 }
 
-/* Buttons */
+/* Buttons - Enhanced with glow effects */
 .btn {
     display: inline-block;
     padding: 1rem 2rem;
     border-radius: 4px;
     font-size: 1rem;
     cursor: pointer;
-    transition: var(--transition);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
 }
 
 .btn-primary {
     border: 1px solid var(--accent);
     color: var(--accent);
     margin-right: 1rem;
+    background: transparent;
 }
 
 .btn-primary:hover {
     background: var(--accent-glow);
+    box-shadow: 0 0 20px rgba(100, 255, 218, 0.3);
+    transform: translateY(-2px);
 }
 
 .btn-outline {
     border: 1px solid var(--text-secondary);
     color: var(--text-secondary);
+    background: transparent;
 }
 
 .btn-outline:hover {
     border-color: var(--accent);
     color: var(--accent);
+    transform: translateY(-2px);
 }
 
 /* Projects Grid */
@@ -273,11 +306,14 @@ h3 {
     background: var(--bg-color-light);
     border-radius: 8px;
     overflow: hidden;
-    transition: var(--transition);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid transparent;
 }
 
 .project-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
+    border-color: rgba(100, 255, 218, 0.2);
+    box-shadow: 0 20px 40px -20px rgba(100, 255, 218, 0.15);
 }
 
 .card-image-placeholder {
@@ -924,6 +960,19 @@ h3 {
     color: var(--accent);
     margin-bottom: 1rem;
     display: block;
+}
+
+.cert-logo {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.cert-card:hover .cert-logo {
+    transform: scale(1.1);
 }
 
 /* Footer Clean */
