@@ -235,6 +235,42 @@ pre code {
     letter-spacing: 0.05em;
 }
 
+/* New Project Badge */
+.new-project-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(100, 255, 218, 0.1);
+    border: 1px solid rgba(100, 255, 218, 0.2);
+    border-radius: 50px;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.new-project-badge:hover {
+    background: rgba(100, 255, 218, 0.15);
+    border-color: var(--accent);
+    transform: translateY(-2px);
+}
+
+.badge-label {
+    background: var(--accent);
+    color: var(--bg-color);
+    font-weight: 600;
+    font-size: 0.75rem;
+    padding: 2px 8px;
+    border-radius: 12px;
+    text-transform: uppercase;
+}
+
+.badge-text {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
 .hero-title {
     font-size: clamp(3rem, 5vw, 5rem);
     /* Responsive font size */
@@ -340,10 +376,26 @@ pre code {
 }
 
 /* Projects Grid */
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+/* Projects Carousel */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.projects-carousel {
+    overflow: hidden;
+    width: 100%;
+    padding: 20px 5px;
+    /* Padding to prevent hover clipping */
+}
+
+.projects-track {
+    display: flex;
     gap: 2rem;
+    /* transition managed in JS for seamless loop */
 }
 
 .project-card {
@@ -352,6 +404,35 @@ pre code {
     overflow: hidden;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     border: 1px solid transparent;
+    flex: 0 0 100%;
+    /* Default to 1 card visible on mobile */
+    min-width: 0;
+    cursor: pointer;
+    height: 350px;
+    /* Fixed height for uniformity */
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 768px) {
+    .project-card {
+        flex: 0 0 calc(50% - 1rem);
+        /* 2 cards visible on tablet */
+    }
+}
+
+@media (min-width: 1024px) {
+    .project-card {
+        flex: 0 0 calc(33.333% - 1.33rem);
+        /* 3 cards visible on desktop */
+    }
+}
+
+.project-card.text-only {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* remove conflicting height overrides to respect the fixed 350px */
 }
 
 .project-card:hover {
@@ -360,28 +441,83 @@ pre code {
     box-shadow: 0 20px 40px -20px rgba(100, 255, 218, 0.15);
 }
 
-.card-image-placeholder {
-    height: 200px;
-    background: #233554;
-}
-
 .card-content {
-    padding: 1.5rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 .card-content h3 {
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: var(--text-primary);
 }
 
 .card-content p {
     color: var(--text-secondary);
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    flex-grow: 1;
 }
 
 .card-link {
     color: var(--accent);
     font-size: 0.9rem;
+    margin-top: auto;
+    font-weight: 500;
+}
+
+/* Carousel Buttons */
+.carousel-btn {
+    background: transparent;
+    border: 1px solid var(--text-secondary);
+    color: var(--text-secondary);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    flex-shrink: 0;
+    z-index: 2;
+}
+
+.carousel-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: rgba(100, 255, 218, 0.1);
+}
+
+/* Carousel Dots */
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 2rem;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--bg-color-light);
+    border: 1px solid var(--text-secondary);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.dot:hover {
+    border-color: var(--accent);
+}
+
+.dot.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    box-shadow: 0 0 10px var(--accent-glow);
 }
 
 /* Responsive */
