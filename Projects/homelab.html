@@ -53,7 +53,7 @@
   <!-- Main Content -->
   <main class="content-wrapper article-content">
     <h1>My Homelab</h1>
-    <p class="subtitle">A playground for learning, breaking, and fixing real-world networking concepts.</p>
+    <p class="subtitle">A lab for learning, breaking, and fixing real-world networking concepts (and saving money on subscription services).</p>
 
     <p>This is my personal homelab that I use to learn, break things, fix them, and experiment with real-world
       networking and server concepts. It’s constantly changing as I add new services or rework the setup.</p>
@@ -72,7 +72,6 @@
 
     <h4>Switching</h4>
     <ul>
-      <li>Cisco Catalyst 2950 Series</li>
       <li>Netgear GS308EP 8-Port Managed PoE+ Switch</li>
     </ul>
 
@@ -86,18 +85,23 @@
     <ul>
       <li>HYVE Zeus SH</li>
       <li>2× Dell Optiplex 3060</li>
+      <li>Dell Optiplex 3050</li>
     </ul>
 
     <h4>Storage</h4>
     <ul>
       <li>UGREEN DXP4800+</li>
-      <li>3× 4TB HDDs</li>
+      <li>4× 4TB HDDs in RAID 5</li>
     </ul>
 
-    <h4>Not Yet Installed</h4>
+    <h4>UPS</h4>
     <ul>
-      <li>Cisco VoIP Phones</li>
-      <li>Aruba Access Points</li>
+      <li>UGREEN NAS UPS US3000</li>
+    </ul>
+
+    <h4>Not Pictured</h4>
+    <ul>
+      <li>Sangoma VoIP Phone</li>
     </ul>
 
     <hr>
@@ -114,20 +118,57 @@
     <h4>Dell Optiplex 3060 #1</h4>
     <ul>
       <li>Runs Proxmox</li>
-      <li>Hosts several VMs including Glance (dashboard), Docker containers (Portainer, N8N), and AdGuard Home.</li>
+      <li>VMs Running</li>
+      <ul>
+        <li>homelable (map out homelab seen in the network topology section)</li>
+        <li>Docker using Portainer to manage it</li>
+        <ul>
+          <li>Homepage (Dashboard to monitor all my services)</li>
+          <li>n8n (Workflow automation)</li>
+          <li>Your_spotify (Spotify statistics)</li>
+        </ul>
+        <li>FreePBX</li>
+      </ul>
     </ul>
 
     <h4>Dell Optiplex 3060 #2</h4>
     <ul>
-      <li>Runs Windows Server 2022</li>
-      <li>Used for an Active Directory and Group Policy environment. Also hosts subnetsuite.com via Cloudflare Tunnel.
-      </li>
+      <li>Runs Proxmox</li>
+      <li>VMs Running</li>
+      <ul>
+        <li>HomeAssistant</li>
+        <li>Apache Guacamole (Browser based Remote SSH and RDP Access)</li>
+        <li>CheckMK (SNMP Monitoring)</li>
+      </ul>
+    </ul>
+
+    <h4>Dell Optiplex 3050</h4>
+    <ul>
+      <li>Runs Proxmox</li>
+      <li>VMs Running</li>
+      <ul>
+        <li>Windows Server 2025 (DNS Server and AD Domain Controller)</li>
+      </ul>
     </ul>
 
     <h4>UGREEN NAS</h4>
     <ul>
-      <li>Runs Jellyfin and additional Docker containers</li>
-      <li>Primarily used for backups, media storage, and general file storage.</li>
+      <li>Backup Source for all VMs and runs docker</li>
+      <li>VMs Running</li>
+      <ul>
+        <li>Proxmox Backup Server (Backs up VMs of all 3 Proxmox servers)</li>
+        <li>Proxmox Datacenter Manager (Management interface for all Proxmox Servers)</li>
+      </ul>
+      <li>Docker Containers</li>
+      <ul>
+        <li>Jellyfin (Media Server)</li>
+        <li>Plex (Media Server)</li>
+        <li>Immich (Google Photos Alternative)</li>
+        <li>Nextcloud (Google Drive Alternative)</li>
+        <li>Paperless-NGX (Document Management)</li>
+        <li>Grimmory (Ebook Server)</li>
+        <li>*arr stack (Automated Media Management)</li>
+      </ul>
     </ul>
 
     <hr>
@@ -136,7 +177,7 @@
     <img src="../../Images/diagram.png" alt="Network Diagram"
       style="width: 100%; border-radius: 8px; margin: 2rem 0; box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);">
 
-    <p>The Comcast modem in our living room feeds into the TP-Link Deco mesh system. One Deco unit sits near the homelab
+    <p>The Comcast modem in my living room feeds into the TP-Link Deco mesh system. One Deco unit sits near the homelab
       and provides the upstream connection.</p>
 
     <p>From there, a Deco port connects to the WAN interface on my OPNsense router. The LAN side of OPNsense feeds into
