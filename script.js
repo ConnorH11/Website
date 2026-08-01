@@ -6,10 +6,10 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
             navbar.style.boxShadow = "0 10px 30px -10px rgba(2, 12, 27, 0.7)";
-            navbar.style.height = "70px";
+            navbar.style.height = "66px";
         } else {
             navbar.style.boxShadow = "none";
-            navbar.style.height = "80px";
+            navbar.style.height = "72px";
         }
     });
 
