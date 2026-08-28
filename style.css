@@ -1228,7 +1228,7 @@ h1, h2, h3 { letter-spacing: -0.035em; }
 .nav-link:hover, .nav-link.active { color: var(--text-primary); }
 
 /* Home */
-.hero-section { min-height: 88vh; }
+.hero-section { min-height: 100vh; }
 .hero-title { font-size: clamp(3.4rem, 6vw, 5.5rem); margin-bottom: 1rem; }
 .eyebrow { color: var(--accent); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; margin-bottom: 1.1rem; }
 .hero-subtitle { font-size: 1.2rem; max-width: 430px; }
