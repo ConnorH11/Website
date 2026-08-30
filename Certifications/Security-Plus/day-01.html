@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Day 1 of Connor Horning's CompTIA Security+ study notes, covering risk management, the CIA triad, threat actors, threat intelligence, and security policies.">
+    <title>Risk Management Part 1 | Security+ Day 1</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../../index.html#home" class="logo">CH.</a>
+
+            <div class="desktop-menu">
+                <a href="../../index.html#home" class="nav-link">Home</a>
+                <a href="../../index.html#projects" class="nav-link">Projects</a>
+                <a href="../../index.html#articles" class="nav-link">Articles</a>
+                <a href="../../index.html#certification-log" class="nav-link active">Learning</a>
+                <a href="../../index.html#experience" class="nav-link">Resume</a>
+                <a href="../../index.html#about" class="nav-link">About</a>
+                <a href="../../index.html#contact" class="nav-link">Contact</a>
+            </div>
+
+            <div class="mobile-toggle" id="mobile-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="../../index.html#home" class="mobile-link">Home</a>
+        <a href="../../index.html#projects" class="mobile-link">Projects</a>
+        <a href="../../index.html#articles" class="mobile-link">Articles</a>
+        <a href="../../index.html#certification-log" class="mobile-link">Learning</a>
+        <a href="../../index.html#experience" class="mobile-link">Resume</a>
+        <a href="../../index.html#about" class="mobile-link">About</a>
+        <a href="../../index.html#contact" class="mobile-link">Contact</a>
+    </div>
+
+    <main class="content-wrapper article-content study-note-page">
+        <a class="note-back-link" href="../../index.html#certification-log">&larr; Back to certification journal</a>
+
+        <div class="note-meta">
+            <span>Day 01</span>
+            <span>CompTIA Security+</span>
+            <span>SY0-701</span>
+        </div>
+
+        <h1>Risk Management Part 1</h1>
+        <p class="subtitle note-intro">My first set of Security+ notes: business risk, the CIA triad, threat actors,
+            threat intelligence, physical risks, and the policies used to keep everything under control.</p>
+
+        <nav class="note-toc" aria-label="Day 1 note sections">
+            <p>On this page</p>
+            <ol>
+                <li><a href="#business-risk">Defining business risk</a></li>
+                <li><a href="#cia-triad">The CIA triad</a></li>
+                <li><a href="#threat-actors">Threat actors</a></li>
+                <li><a href="#shadow-it">Shadow IT</a></li>
+                <li><a href="#allowlisting">Application allowlisting</a></li>
+                <li><a href="#threat-intelligence">Threat intelligence</a></li>
+                <li><a href="#risk-vectors">Risk vectors</a></li>
+                <li><a href="#security-policies">Security policies</a></li>
+            </ol>
+        </nav>
+
+        <section id="business-risk" class="note-section">
+            <h2>Defining Business Risk</h2>
+            <p>Risk management starts with knowing what the business has, what could go wrong, and how much damage it
+                would cause. These four terms connect everything together:</p>
+
+            <div class="term-grid">
+                <div class="term-card">
+                    <h3>Asset</h3>
+                    <p>Anything valuable to the business. This includes personal information, financial information,
+                        devices, applications, services, business operations, and even the company's reputation.</p>
+                </div>
+                <div class="term-card">
+                    <h3>Threat</h3>
+                    <p>Anything with the potential to cause harm. It could be an attacker, an employee mistake, a fire,
+                        a power outage, or another event that affects an asset.</p>
+                </div>
+                <div class="term-card">
+                    <h3>Vulnerability</h3>
+                    <p>A weakness or gap in security that a threat could take advantage of. An unpatched server, weak
+                        password, or unlocked server-room door would all count.</p>
+                </div>
+                <div class="term-card">
+                    <h3>Risk</h3>
+                    <p>The possibility of harm, usually judged by both likelihood and impact. Basically: how likely is
+                        the problem, and how bad would it be if it happened?</p>
+                </div>
+            </div>
+
+            <div class="note-callout">
+                <strong>How I connect the terms</strong>
+                <p>A payroll account is the <b>asset</b>. A criminal sending phishing emails is the <b>threat</b>. No
+                    MFA on the account is the <b>vulnerability</b>. The chance of that account being compromised, plus
+                    the damage it could cause, is the <b>risk</b>.</p>
+            </div>
+
+            <p>The basic risk-management job can be broken down into four parts:</p>
+            <ol class="note-list">
+                <li>Understand and protect the assets.</li>
+                <li>Find and address vulnerabilities.</li>
+                <li>Recognize the threats that actually matter to the business.</li>
+                <li>Assess the risk and reduce it to an acceptable level.</li>
+            </ol>
+        </section>
+
+        <section id="cia-triad" class="note-section">
+            <h2>The CIA Triad</h2>
+            <p>The CIA triad is a quick way to think about what security controls are supposed to protect:</p>
+            <ul class="note-list">
+                <li><strong>Confidentiality:</strong> Data is only accessible to people who are authorized to see it.
+                    For example, employee records should be available to HR, not every employee in the company.</li>
+                <li><strong>Integrity:</strong> Data stays accurate, complete, and trustworthy. Unauthorized changes or
+                    deletions break integrity, even if nobody steals the data.</li>
+                <li><strong>Availability:</strong> Systems, services, and data are working and accessible when authorized
+                    users need them. Backups, redundancy, and protection against denial-of-service attacks all help.</li>
+            </ul>
+        </section>
+
+        <section id="threat-actors" class="note-section">
+            <h2>Threat Actors</h2>
+            <p>Threat actors can be grouped by where they operate, the resources they have, their skill level, and what
+                they are trying to accomplish. Those differences affect who they target and the type of attack they are
+                likely to use.</p>
+
+            <div class="notes-table-wrap" role="region" aria-label="Threat actor comparison" tabindex="0">
+                <table class="notes-table">
+                    <thead>
+                        <tr>
+                            <th>Type</th>
+                            <th>Usually</th>
+                            <th>Resources</th>
+                            <th>Main motivation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Unskilled attacker</td>
+                            <td>External</td>
+                            <td>Low</td>
+                            <td>Curiosity, attention, or easy targets. Often uses tools made by somebody else (also
+                                called a script kiddie).</td>
+                        </tr>
+                        <tr>
+                            <td>Hacktivist</td>
+                            <td>External</td>
+                            <td>Varies</td>
+                            <td>Promoting a social or political cause.</td>
+                        </tr>
+                        <tr>
+                            <td>Insider threat</td>
+                            <td>Internal</td>
+                            <td>Varies</td>
+                            <td>Could be malicious, careless, or accidental. Their authorized access and knowledge of
+                                the company can make the impact serious.</td>
+                        </tr>
+                        <tr>
+                            <td>Organized crime</td>
+                            <td>External</td>
+                            <td>High</td>
+                            <td>Profit. These groups are usually organized, specialized, and professional.</td>
+                        </tr>
+                        <tr>
+                            <td>Nation-state</td>
+                            <td>External</td>
+                            <td>Very high</td>
+                            <td>Espionage, disruption, military advantage, political goals, or economic advantage.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Advanced Persistent Threats (APTs)</h3>
+            <p>APTs are skilled, well-resourced attackers that can stay focused on a target for a long time. Their
+                attacks are usually planned, stealthy, and persistent. Nation-states are commonly connected to APTs.
+                The defining traits are the time, resources, and long-term access involved in the campaign.</p>
+        </section>
+
+        <section id="shadow-it" class="note-section">
+            <h2>Shadow IT</h2>
+            <p>Shadow IT is the unauthorized use of software, cloud services, devices, or other tools by employees.
+                This often happens when somebody finds their own way to get work done without going through the IT
+                approval process.</p>
+            <p>The company may not know where its data is being stored or whether the tool has the right security
+                controls. That can create vulnerabilities, expose data, make compliance harder, and leave IT supporting
+                systems it did not know were being used.</p>
+        </section>
+
+        <section id="allowlisting" class="note-section">
+            <h2>Application Allowlisting</h2>
+            <p>An application allowlist defines which applications and components are allowed to run on company
+                systems. Anything not approved is blocked by default. This can stop malware and unauthorized software,
+                while still letting employees use the tools they need.</p>
+            <p>The allowlist needs regular maintenance as approved applications and versions change. It works alongside
+                patching, least privilege, endpoint protection, and user training to reduce the attack surface.</p>
+        </section>
+
+        <section id="threat-intelligence" class="note-section">
+            <h2>Threat Intelligence</h2>
+            <p>Threat intelligence provides information about current or possible threats. It can show the tactics,
+                techniques, and procedures (TTPs) attackers use and help a company decide what it should defend against
+                first.</p>
+
+            <h3>Sources of intelligence</h3>
+            <ul class="note-list">
+                <li><strong>OSINT:</strong> Open-source intelligence from public sources such as government reports,
+                    security advisories, research, news, and public repositories.</li>
+                <li><strong>Threat maps:</strong> Visualizations such as the <a href="https://threatmap.checkpoint.com/"
+                        target="_blank" rel="noopener noreferrer">Check Point threat map</a>. They are useful for seeing
+                    general activity patterns and where the displayed traffic is coming from.</li>
+                <li><strong>Google Hacking Database:</strong> A collection of search queries (Google dorks) that can
+                    reveal accidentally indexed information. It can help check what a site exposes publicly. A normal
+                    vulnerability scan goes further by checking the systems and services directly.</li>
+                <li><strong>Commercial feeds:</strong> Closed or proprietary intelligence services that require a paid
+                    subscription.</li>
+            </ul>
+
+            <h3>CVE records</h3>
+            <p>CVE stands for Common Vulnerabilities and Exposures. A CVE ID gives a publicly disclosed vulnerability a
+                unique identifier so vendors, scanners, researchers, and defenders can all refer to the same issue. A
+                CVE record normally includes a short description, affected products or versions, and references. It
+                gives defenders a common name for the vulnerability. Details about a real attack come from security
+                alerts, system logs, incident reports, and the investigation itself.</p>
+
+            <h3>Sharing threat intelligence</h3>
+            <ul class="note-list">
+                <li><strong>AIS (Automated Indicator Sharing):</strong> CISA's program for machine-to-machine sharing of
+                    cyber threat indicators and defensive information.</li>
+                <li><strong>STIX (Structured Threat Information Expression):</strong> The structured, machine-readable
+                    format used to describe threat intelligence.</li>
+                <li><strong>TAXII (Trusted Automated Exchange of Intelligence Information):</strong> The application
+                    protocol and API used to exchange threat intelligence over HTTPS.</li>
+            </ul>
+
+            <div class="note-callout">
+                <strong>The easy way I remember it</strong>
+                <p>STIX describes what the threat-intelligence data looks like. TAXII is how systems exchange it. AIS
+                    is one sharing program that uses both.</p>
+            </div>
+        </section>
+
+        <section id="risk-vectors" class="note-section">
+            <h2>Risk Vectors</h2>
+            <p>A risk vector is a path or area where the business can be exposed to harm. Before locking anything down,
+                the company has to answer a basic question: <em>Do we know what we have and where it is?</em></p>
+
+            <h3>Mission-critical systems and data</h3>
+            <ul class="note-list">
+                <li>Payment processing</li>
+                <li>HR systems and employee records</li>
+                <li>Emergency or life-safety systems</li>
+                <li>Sensitive business and customer data</li>
+            </ul>
+
+            <h3>Physical risk vectors</h3>
+            <ul class="note-list">
+                <li><strong>Access-control vestibule (mantrap):</strong> Controls entry so one authorized person passes
+                    through at a time.</li>
+                <li><strong>Server-room access:</strong> Locked doors, access logs, and limiting entry to authorized
+                    staff.</li>
+                <li><strong>Bootable USB devices:</strong> Restricting external boot devices so somebody cannot bypass
+                    the installed operating system or run unauthorized tools on company equipment.</li>
+            </ul>
+        </section>
+
+        <section id="security-policies" class="note-section">
+            <h2>Security Policies</h2>
+            <p>Policies put the company's security expectations into writing. They tell employees what is allowed, who
+                approves changes, and how assets and data should be handled.</p>
+
+            <ul class="note-list">
+                <li><strong>Acceptable Use Policy (AUP):</strong> Rules for email, social media, web browsing, company
+                    devices, and internet access.</li>
+                <li><strong>Resource Access Policy:</strong> Defines who can use applications, file shares, systems, and
+                    other resources.</li>
+                <li><strong>Account Policy:</strong> Covers MFA, password requirements, account lifecycle, least
+                    privilege, and access reviews.</li>
+                <li><strong>Data Retention Policy:</strong> Defines how long information is kept and how it is disposed
+                    of. Legal and regulatory requirements often affect this, but business needs matter too.</li>
+                <li><strong>Change Control Policy:</strong> Defines how changes are requested, reviewed, tested,
+                    approved, scheduled, documented, and rolled back if something goes wrong.</li>
+                <li><strong>Asset Management Policy:</strong> Covers physical, digital, and information assets across
+                    their full lifecycle—from purchase or creation through disposal.</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <section aria-labelledby="sources-heading">
+            <h2 id="sources-heading">Reference Sources</h2>
+            <ul class="source-list">
+                <li><a href="https://csrc.nist.gov/glossary/term/risk" target="_blank" rel="noopener noreferrer">NIST
+                        CSRC Glossary: Risk</a></li>
+                <li><a href="https://csrc.nist.gov/glossary/term/security" target="_blank"
+                        rel="noopener noreferrer">NIST CSRC Glossary: Security and the CIA triad</a></li>
+                <li><a href="https://www.nist.gov/publications/guide-application-whitelisting" target="_blank"
+                        rel="noopener noreferrer">NIST SP 800-167: Guide to Application Allowlisting</a></li>
+                <li><a href="https://www.cisa.gov/resources-tools/resources/insider-threat-mitigation-guide" target="_blank"
+                        rel="noopener noreferrer">CISA: Insider Threat Mitigation Guide</a></li>
+                <li><a href="https://www.cisa.gov/topics/cyber-threats-and-advisories/information-sharing/automated-indicator-sharing-ais/how-share-cyber-threat-information-through-ais"
+                        target="_blank" rel="noopener noreferrer">CISA: Automated Indicator Sharing</a></li>
+                <li><a href="https://oasis-open.github.io/cti-documentation/" target="_blank"
+                        rel="noopener noreferrer">OASIS: STIX and TAXII overview</a></li>
+                <li><a href="https://www.cve.org/about/Process" target="_blank" rel="noopener noreferrer">CVE Program:
+                        CVE Record process</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Connor Horning.</p>
+    </footer>
+
+    <script src="../../script.js"></script>
+</body>
+
+</html>

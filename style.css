@@ -1284,6 +1284,438 @@ h1, h2, h3 { letter-spacing: -0.035em; }
 .read-more { color: var(--text-primary); border: 0; border-radius: 0; padding: 0; font-size: 0.74rem; font-weight: 750; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; }
 .read-more:hover, .article-item:hover .read-more { background: transparent; color: var(--accent); transform: none; }
 
+/* Certification journal: a living study log between finished writing and the resume */
+.certification-heading {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 3rem;
+    margin-bottom: 3.25rem;
+}
+
+.certification-heading .section-title { margin-bottom: 0; }
+
+.section-kicker,
+.certification-label {
+    color: var(--accent);
+    font-size: 0.68rem;
+    font-weight: 750;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+}
+
+.section-kicker { margin-bottom: 0.8rem; }
+
+.section-intro {
+    max-width: 440px;
+    color: var(--text-secondary);
+    font-family: var(--font-heading);
+    font-size: 1.08rem;
+    line-height: 1.55;
+}
+
+.certification-journal {
+    display: grid;
+    grid-template-columns: minmax(260px, 0.78fr) minmax(0, 1.4fr);
+    border: 1px solid #d4cec3;
+}
+
+.certification-overview,
+.study-entries { padding: clamp(1.6rem, 4vw, 2.6rem); }
+
+.certification-overview {
+    background: #ebe7df;
+    border-right: 1px solid #d4cec3;
+}
+
+.certification-name-row {
+    display: block;
+}
+
+.certification-name-row h3,
+.study-entries-header h3 { margin-top: 0.25rem; font-size: 1.55rem; }
+
+.certification-title-line {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: nowrap;
+    gap: 0.55rem;
+}
+
+.certification-title-line h3 { white-space: nowrap; }
+
+.exam-code {
+    color: var(--accent);
+    font-size: 0.62rem;
+    font-weight: 750;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+}
+
+.certification-facts {
+    margin-top: 2rem;
+    border-top: 1px solid #cec8bd;
+}
+
+.certification-facts > div {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #cec8bd;
+}
+
+.certification-facts dt {
+    color: var(--text-secondary);
+    font-size: 0.76rem;
+}
+
+.certification-facts dd { font-size: 0.78rem; font-weight: 700; }
+
+.certification-resources {
+    margin-top: 1rem;
+    border-bottom: 1px solid #cec8bd;
+}
+
+.certification-resources summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.75rem 0;
+    color: var(--text-primary);
+    cursor: pointer;
+    font-size: 0.76rem;
+    font-weight: 700;
+    list-style: none;
+}
+
+.certification-resources summary::-webkit-details-marker { display: none; }
+.certification-resources summary:focus { outline: none; }
+.certification-resources summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+.certification-resources summary::after {
+    content: '+';
+    margin-left: auto;
+    color: var(--accent);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.certification-resources[open] summary::after { content: '\2212'; }
+
+.certification-resources summary:hover { color: var(--accent); }
+
+.resource-count {
+    min-width: 20px;
+    padding: 0.05rem 0.35rem;
+    background: #dcd6cc;
+    color: var(--text-secondary);
+    font-size: 0.64rem;
+    text-align: center;
+}
+
+.resource-list {
+    padding: 0 0 0.7rem;
+    list-style: none;
+}
+
+.resource-list li + li { border-top: 1px solid #d5cfc5; }
+
+.resource-list a {
+    display: block;
+    padding: 0.8rem 0;
+    color: var(--text-primary);
+    font-size: 0.76rem;
+    line-height: 1.4;
+}
+
+.resource-list a:hover { color: var(--accent); }
+
+.resource-list small {
+    display: block;
+    margin-top: 0.2rem;
+    color: var(--text-secondary);
+    font-size: 0.64rem;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+}
+
+.status-dot {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    margin-right: 0.45rem;
+    border-radius: 50%;
+    background: var(--accent);
+}
+
+.study-progress {
+    display: block;
+    width: 100%;
+    height: 3px;
+    margin-top: 2rem;
+    border: 0;
+    border-radius: 0;
+    background: #d2ccc1;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.study-progress::-webkit-progress-bar { background: #d2ccc1; }
+.study-progress::-webkit-progress-value { background: var(--accent); }
+.study-progress::-moz-progress-bar { background: var(--accent); }
+
+.study-day-list {
+    list-style: none;
+    max-height: 390px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-color: var(--accent) #e2ddd4;
+    scrollbar-width: thin;
+}
+
+.study-day-list::-webkit-scrollbar { width: 7px; }
+.study-day-list::-webkit-scrollbar-track { background: #e2ddd4; }
+.study-day-list::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    border: 2px solid #e2ddd4;
+}
+
+.progress-caption,
+.study-log-note {
+    margin-top: 0.7rem;
+    color: var(--text-secondary);
+    font-size: 0.72rem;
+}
+
+.study-entries { background: var(--bg-color); }
+
+.study-entries-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding-bottom: 1.7rem;
+    border-bottom: 1px solid #d4cec3;
+}
+
+.entry-count,
+.day-status {
+    color: var(--text-secondary);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+}
+
+.entry-count { padding-top: 0.35rem; }
+
+.study-day {
+    border-bottom: 1px solid #d4cec3;
+}
+
+.study-day-link {
+    display: grid;
+    grid-template-columns: 44px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 1.55rem 0;
+    color: inherit;
+}
+
+.study-day-link:hover .day-details h4,
+.study-day-link:hover .day-topic,
+.study-day-link:hover .day-status {
+    color: var(--accent);
+}
+
+.day-number {
+    color: var(--accent);
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+}
+
+.day-details h4 {
+    margin-bottom: 0;
+    color: var(--text-primary);
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+}
+
+.day-heading {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.25rem 0.65rem;
+    margin-bottom: 0.25rem;
+}
+
+.day-topic {
+    color: var(--text-primary);
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.day-details p {
+    max-width: 540px;
+    color: var(--text-secondary);
+    font-size: 0.86rem;
+    line-height: 1.5;
+}
+
+.day-status { color: var(--accent); white-space: nowrap; }
+.study-log-note { margin-top: 1.25rem; }
+
+/* Certification study-note pages */
+.article-content.study-note-page::before { content: 'SECURITY+ JOURNAL / DAY 01'; }
+
+.article-content.study-note-page h1 {
+    font-size: clamp(2.6rem, 4.5vw, 3.8rem);
+}
+
+.note-back-link {
+    display: inline-block;
+    margin-bottom: 2.5rem;
+    color: var(--text-secondary) !important;
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-decoration: none !important;
+    text-transform: uppercase;
+}
+
+.note-back-link:hover { color: var(--accent) !important; }
+
+.note-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    margin-bottom: 1rem;
+}
+
+.note-meta span {
+    padding: 0.25rem 0.5rem;
+    border: 1px solid #c8c1b6;
+    color: var(--text-secondary);
+    font-size: 0.66rem;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+}
+
+.note-intro {
+    padding-bottom: 2.25rem;
+    border-bottom: 1px solid #d4cec3;
+}
+
+.note-toc {
+    margin: 3rem 0 4rem;
+    padding: 1.4rem 1.5rem;
+    border: 1px solid #d4cec3;
+}
+
+.note-toc p {
+    margin-bottom: 0.75rem;
+    color: var(--accent);
+    font-size: 0.7rem;
+    font-weight: 750;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.note-toc ol {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.45rem 2rem;
+    padding-left: 1.2rem;
+}
+
+.note-toc li { margin: 0; font-size: 0.88rem; }
+.note-toc a { color: var(--text-secondary); }
+
+.term-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1px;
+    margin: 2rem 0;
+    background: #d4cec3;
+    border: 1px solid #d4cec3;
+}
+
+.term-card {
+    padding: 1.35rem;
+    background: var(--bg-color);
+}
+
+.term-card h3 {
+    margin-bottom: 0.4rem;
+    color: var(--accent);
+    font-family: var(--font-body);
+    font-size: 0.76rem;
+    font-weight: 750;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.term-card p { margin: 0; font-size: 0.92rem; line-height: 1.65; }
+
+.note-callout {
+    margin: 2rem 0;
+    padding: 1.25rem 1.4rem;
+    border-left: 3px solid var(--accent);
+    background: #ebe7df;
+}
+
+.note-callout strong {
+    display: block;
+    margin-bottom: 0.35rem;
+    color: var(--text-primary);
+}
+
+.note-callout p { margin: 0; font-size: 0.94rem; }
+
+.note-section { scroll-margin-top: 95px; }
+
+.note-list { margin: 1.25rem 0 2rem; }
+
+.note-list li { margin-bottom: 0.7rem; }
+
+.notes-table-wrap {
+    margin: 2rem 0;
+    overflow-x: auto;
+    border: 1px solid #d4cec3;
+}
+
+.notes-table {
+    width: 100%;
+    min-width: 680px;
+    border-collapse: collapse;
+    font-size: 0.82rem;
+}
+
+.notes-table th,
+.notes-table td {
+    padding: 0.8rem 0.9rem;
+    border-bottom: 1px solid #d4cec3;
+    text-align: left;
+    vertical-align: top;
+}
+
+.notes-table th {
+    background: #ebe7df;
+    color: var(--text-primary);
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.notes-table tr:last-child td { border-bottom: 0; }
+
+.source-list { margin-top: 1.5rem; }
+.source-list li { margin-bottom: 0.65rem; }
+
 /* Project and article pages */
 .article-content {
     max-width: 780px;
@@ -1335,4 +1767,13 @@ footer { border-top: 1px solid #d9d4ca; color: var(--text-secondary); padding: 2
     .mobile-menu { background: var(--bg-color); }
     .mobile-link { color: var(--text-primary); }
     .mobile-toggle span { background: var(--text-primary); }
+    .certification-heading { display: block; }
+    .section-intro { margin-top: 2.25rem; }
+    .certification-journal { grid-template-columns: 1fr; }
+    .certification-overview { border-right: 0; border-bottom: 1px solid #d4cec3; }
+    .study-day { grid-template-columns: 36px minmax(0, 1fr); gap: 0.85rem; }
+    .day-status { grid-column: 2; }
+    .study-day-link { grid-template-columns: 36px minmax(0, 1fr); gap: 0.85rem; }
+    .study-day-link .day-status { grid-column: 2; }
+    .note-toc ol, .term-grid { grid-template-columns: 1fr; }
 }
