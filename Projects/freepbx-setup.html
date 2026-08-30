@@ -1052,6 +1052,7 @@ footer {
                 <a href="https://connorhorning.com/index.html#home" class="nav-link">Home</a>
                 <a href="https://connorhorning.com/index.html#projects" class="nav-link">Projects</a>
                 <a href="https://connorhorning.com/index.html#articles" class="nav-link">Articles</a>
+                <a href="https://connorhorning.com/index.html#certification-log" class="nav-link">Learning</a>
                 <a href="https://connorhorning.com/index.html#experience" class="nav-link">Resume</a>
                 <a href="https://connorhorning.com/index.html#about" class="nav-link">About</a>
                 <a href="https://connorhorning.com/index.html#contact" class="nav-link">Contact</a>
@@ -1065,10 +1066,23 @@ footer {
         </div>
     </nav>
 
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="../index.html#home" class="mobile-link">Home</a>
+        <a href="../index.html#projects" class="mobile-link">Projects</a>
+        <a href="../index.html#articles" class="mobile-link">Articles</a>
+        <a href="../index.html#certification-log" class="mobile-link">Learning</a>
+        <a href="../index.html#experience" class="mobile-link">Resume</a>
+        <a href="../index.html#about" class="mobile-link">About</a>
+        <a href="../index.html#contact" class="mobile-link">Contact</a>
+    </div>
+
     <!-- Main Content -->
-    <main class="content-wrapper article-content">
+    <main class="content-wrapper article-content project-detail-page">
+<a href="../index.html#projects" class="project-back-link">&larr; All projects</a>
+<div class="project-meta"><span>Project</span><span>VoIP</span><span>Homelab</span></div>
   
 <h1>FreePBX Multi-Site Homelab: SIP Trunks, Extensions, and Advanced Setup</h1>
+<p class="subtitle">Connecting multiple FreePBX servers and VoIP phones across separate homelabs.</p>
 <h2>Introduction</h2>
 <p>We wanted to build a phone system in our homelabs. Each of us set up a FreePBX server, purchased a VoIP phone, and configured trunks between our servers to make it work. This setup simulates internal phone calling, with plans to add external calling in the future.</p>
 <h2>FreePBX Installation</h2>
@@ -1332,13 +1346,7 @@ core show channels
         </div>
     </footer>
 
-    <!-- Mobile Navigation Script -->
-    <script>
-        document.querySelector('.mobile-toggle')?.addEventListener('click', function() {
-            document.querySelector('.desktop-menu').classList.toggle('active');
-            this.classList.toggle('active');
-        });
-    </script>
+    <script src="../script.js"></script>
 
 </body>
 </html>

@@ -16,22 +16,6 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="../style.css">
 
-  <style>
-    .pdf-container {
-      width: 100%;
-      height: 80vh;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);
-      margin-top: 2rem;
-    }
-
-    iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-  </style>
 </head>
 
 <body>
@@ -45,6 +29,8 @@
         <a href="../index.html#home" class="nav-link">Home</a>
         <a href="../index.html#projects" class="nav-link">Projects</a>
         <a href="../index.html#articles" class="nav-link active">Articles</a>
+        <a href="../index.html#certification-log" class="nav-link">Learning</a>
+        <a href="../index.html#experience" class="nav-link">Resume</a>
         <a href="../index.html#about" class="nav-link">About</a>
         <a href="../index.html#contact" class="nav-link">Contact</a>
       </div>
@@ -62,6 +48,8 @@
     <a href="../index.html#home" class="mobile-link">Home</a>
     <a href="../index.html#projects" class="mobile-link">Projects</a>
     <a href="../index.html#articles" class="mobile-link">Articles</a>
+    <a href="../index.html#certification-log" class="mobile-link">Learning</a>
+    <a href="../index.html#experience" class="mobile-link">Resume</a>
     <a href="../index.html#about" class="mobile-link">About</a>
     <a href="../index.html#contact" class="mobile-link">Contact</a>
   </div>
@@ -70,11 +58,119 @@
   <main class="content-wrapper article-content">
     <h1>Transactional Email Analysis</h1>
     <p class="subtitle">Analysis of transactional email services to optimize company communications.</p>
+    <p class="article-byline">By Connor Horning</p>
 
-    <div class="pdf-container">
-      <iframe src="../../PDF/TransactionalEmail.pdf#toolbar=0&navpanes=0&view=FitH"
-        title="Transactional Email PDF"></iframe>
+    <div class="article-actions">
+      <a href="../PDF/TransactionalEmail.pdf" class="github-btn-styled" download>Download original PDF</a>
     </div>
+
+    <nav class="note-toc" aria-label="Table of contents">
+      <p>On this page</p>
+      <ol>
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#amazon-ses">Amazon SES</a></li>
+        <li><a href="#sendgrid">SendGrid</a></li>
+        <li><a href="#developer-integration">Developer integration</a></li>
+        <li><a href="#cost-comparison">Cost comparison</a></li>
+        <li><a href="#pros-cons">Pros and cons</a></li>
+        <li><a href="#recommendation">Final recommendation</a></li>
+        <li><a href="#sources">Sources</a></li>
+      </ol>
+    </nav>
+
+    <section id="introduction" class="note-section">
+      <h2>Introduction</h2>
+      <p>We were tasked with finding a vendor to handle traditional and transactional email systems. Some of the vendors considered included Amazon SES, Mailchimp Transactional, Mailgun, MailerSend, Postmark, Twilio SendGrid, and ZeptoMail.</p>
+      <p>We decided on a hybrid approach: a transactional email service provider for outbound mail and an inbox-ingestion pipeline for inbound mail. We narrowed the options down to two:</p>
+      <ul>
+        <li>SendGrid for transactional email, along with its Inbound Parse Webhook for inbound mail.</li>
+        <li>Amazon SES for transactional email, along with its inbound email rules for inbound mail.</li>
+      </ul>
+    </section>
+
+    <section id="amazon-ses" class="note-section">
+      <h2>Amazon SES</h2>
+      <p>Amazon Simple Email Service is designed for high scalability. It uses AWS infrastructure to handle millions of emails per day without capacity issues. Along with scalability, it promotes deliverability best practices such as domain authentication through SPF and DKIM, as well as feedback loops.</p>
+      <p>SES offers shared IP pools managed by AWS and dedicated IP addresses for senders who need more control. Amazon also provides tools for monitoring delivery metrics through Amazon CloudWatch and Virtual Deliverability Manager. Overall, SES provides reliable throughput and inbox placement for large volumes of transactional email.</p>
+    </section>
+
+    <section id="sendgrid" class="note-section">
+      <h2>SendGrid</h2>
+      <p>SendGrid’s email platform is built for scale and advertises a strong deliverability rate. It maintains relationships with internet service providers and provides deliverability support through tools such as Deliverability Insights, email validation services, and guidance from email experts.</p>
+      <p>Like Amazon SES, SendGrid uses shared IP pools, while higher plans let customers use dedicated IP addresses. SendGrid also supports DKIM and SPF. Its main focus is providing the infrastructure and guidance needed to keep large-scale transactional email out of spam folders.</p>
+    </section>
+
+    <section id="developer-integration" class="note-section">
+      <h2>Developer Integration</h2>
+      <p>Both platforms support SMTP and API-based email sending. SES supports AWS SDKs and integrates with other AWS services. SendGrid simplifies development through its APIs, client libraries, and Inbound Parse Webhook.</p>
+      <p>The webhook makes handling replies and user-generated content simpler and faster than the more AWS-specific setup required by SES.</p>
+    </section>
+
+    <section id="cost-comparison" class="note-section">
+      <h2>Cost Comparison</h2>
+      <p>Amazon SES is the more affordable option at a high sending volume. The estimates used in this report were:</p>
+
+      <div class="notes-table-wrap">
+        <table class="notes-table">
+          <thead>
+            <tr><th>Provider</th><th>Pricing model</th><th>Estimated monthly volume and cost</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Amazon SES</td>
+              <td>$0.10 per 1,000 emails sent</td>
+              <td>Approximately $500 per month for 5 million emails</td>
+            </tr>
+            <tr>
+              <td>SendGrid</td>
+              <td>Tiered pricing</td>
+              <td>About $400 per month for 1 million emails; 5 million can exceed $1,500 depending on features</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>Features such as dedicated IP addresses and higher support levels can increase SendGrid’s price. Based on these estimates, SES would remain much less expensive at the volume expected for this project.</p>
+    </section>
+
+    <section id="pros-cons" class="note-section">
+      <h2>Pros and Cons Comparison</h2>
+      <div class="notes-table-wrap">
+        <table class="notes-table">
+          <thead>
+            <tr><th>Feature</th><th>Amazon SES</th><th>SendGrid</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Cost</td><td>Very low</td><td>Higher, especially at large volumes</td></tr>
+            <tr><td>Developer tools</td><td>Basic APIs and AWS SDKs</td><td>Feature-rich SDKs and an intuitive interface</td></tr>
+            <tr><td>Inbound email</td><td>S3 and Lambda setup</td><td>Simple HTTP webhook</td></tr>
+            <tr><td>Analytics</td><td>Basic unless built manually</td><td>Advanced built-in engagement tracking</td></tr>
+            <tr><td>IP management</td><td>Optional dedicated IP addresses</td><td>Shared or dedicated IP addresses on higher plans</td></tr>
+            <tr><td>Scalability</td><td>Excellent and backed by AWS</td><td>Excellent, but more expensive at scale</td></tr>
+            <tr><td>Ease of use</td><td>Developer-oriented and AWS-focused</td><td>Polished experience and easy onboarding</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="recommendation" class="note-section">
+      <h2>Final Recommendation</h2>
+      <p>After comparing Amazon SES and SendGrid, we decided that Amazon SES would be the better option. Its affordability, scalability, and tight integration with AWS make it a good fit for an application expected to grow rapidly to 50,000 users within a year.</p>
+      <p>SendGrid offers a more user-friendly interface and advanced analytics, but the cost difference does not support choosing it for this project. We can develop a basic monitoring tool that provides similar functionality to SendGrid’s analytics page for a fraction of the cost. Amazon SES offers the best balance of value and performance as we move forward with the project.</p>
+    </section>
+
+    <section id="sources" class="note-section">
+      <h2>Sources</h2>
+      <ul class="source-list">
+        <li>“AWS SES vs. SendGrid: An Email Provider Comparison.”</li>
+        <li>“Amazon SES vs. SendGrid: Which One Helps Sender Reputation?”</li>
+        <li>“12 Pros and Cons of Amazon SES—Is It Right for You?”</li>
+        <li>“SendGrid Review: Features, Pricing, Pros &amp; Cons.”</li>
+        <li><a href="https://aws.amazon.com/ses/pricing/" target="_blank" rel="noopener noreferrer">Amazon SES pricing</a></li>
+        <li><a href="https://docs.aws.amazon.com/ses/latest/dg/" target="_blank" rel="noopener noreferrer">Amazon SES documentation</a></li>
+        <li><a href="https://sendgrid.com/pricing/" target="_blank" rel="noopener noreferrer">SendGrid pricing</a></li>
+      </ul>
+    </section>
 
   </main>
 

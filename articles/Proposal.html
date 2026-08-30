@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cloud Migration Proposal | Connor Horning</title>
+  <title>Hardware Refresh Project Proposal | Connor Horning</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,22 +16,6 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="../style.css">
 
-  <style>
-    .pdf-container {
-      width: 100%;
-      height: 80vh;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);
-      margin-top: 2rem;
-    }
-
-    iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-  </style>
 </head>
 
 <body>
@@ -45,6 +29,8 @@
         <a href="../index.html#home" class="nav-link">Home</a>
         <a href="../index.html#projects" class="nav-link">Projects</a>
         <a href="../index.html#articles" class="nav-link active">Articles</a>
+        <a href="../index.html#certification-log" class="nav-link">Learning</a>
+        <a href="../index.html#experience" class="nav-link">Resume</a>
         <a href="../index.html#about" class="nav-link">About</a>
         <a href="../index.html#contact" class="nav-link">Contact</a>
       </div>
@@ -62,18 +48,149 @@
     <a href="../index.html#home" class="mobile-link">Home</a>
     <a href="../index.html#projects" class="mobile-link">Projects</a>
     <a href="../index.html#articles" class="mobile-link">Articles</a>
+    <a href="../index.html#certification-log" class="mobile-link">Learning</a>
+    <a href="../index.html#experience" class="mobile-link">Resume</a>
     <a href="../index.html#about" class="mobile-link">About</a>
     <a href="../index.html#contact" class="mobile-link">Contact</a>
   </div>
 
   <!-- Main Content -->
   <main class="content-wrapper article-content">
-    <h1>Cloud Migration Proposal</h1>
+    <h1>Hardware Refresh Project Proposal</h1>
     <p class="subtitle">Hardware refresh strategy focusing on cloud migration vs on-prem replacement.</p>
+    <p class="article-byline">By Connor Horning</p>
 
-    <div class="pdf-container">
-      <iframe src="../../PDF/Proposal.pdf#toolbar=0&navpanes=0&view=FitH" title="Project Proposal PDF"></iframe>
+    <div class="article-actions">
+      <a href="../PDF/Proposal.pdf" class="github-btn-styled" download>Download original PDF</a>
     </div>
+
+    <nav class="note-toc" aria-label="Table of contents">
+      <p>On this page</p>
+      <ol>
+        <li><a href="#executive-summary">Executive summary</a></li>
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#status-quo">Why the status quo is not viable</a></li>
+        <li><a href="#cloud-migration">Migrating to the cloud</a></li>
+        <li><a href="#migration-process">The migration process</a></li>
+        <li><a href="#alternatives">Alternatives considered</a></li>
+        <li><a href="#cost-analysis">Cost analysis</a></li>
+        <li><a href="#conclusion">Conclusion and recommendations</a></li>
+      </ol>
+    </nav>
+
+    <section id="executive-summary" class="note-section">
+      <h2>Executive Summary</h2>
+      <p>We are looking into doing a hardware refresh for our four racks of Dell equipment in the server room. These four racks are out of support from Dell and are no longer under warranty. We have three options: refresh to newer on-prem gear, keep the old gear, or migrate to a cloud provider.</p>
+      <p>We are leaning toward migrating to a cloud provider because of scalability, flexibility, reduced maintenance, global accessibility, and resilience. Migrating would make it a lot cheaper than spending a large amount of money on on-prem servers. We can scale resources up or down depending on the workload and only pay for what we use.</p>
+      <p>Employees would be able to access their resources while out of the office. We would not need to upgrade the servers every few years, which could cost upward of $80,000. The cloud provider would handle hardware upgrades and maintenance. The environment would also be more resilient, meaning it could recover quickly and have significantly less downtime than an on-prem environment.</p>
+    </section>
+
+    <section id="introduction" class="note-section">
+      <h2>Introduction</h2>
+
+      <h3>Overview of the current infrastructure</h3>
+      <p>Currently, our server room consists of four racks of Dell equipment, with two servers in each rack. All eight servers are out of date and should be replaced during the coming year. The six R720 servers and two R620 servers are well out of support. Continuing to use them could lead to crashes, downtime, security vulnerabilities, and limited support.</p>
+
+      <h3>Challenges of outdated hardware</h3>
+      <p>Outdated equipment can lead to crashes, downtime, compatibility issues, security vulnerabilities, reduced efficiency, and limited support. These servers are more likely to crash, resulting in downtime that can cost the company revenue over time.</p>
+      <p>The servers may also be incompatible with newer software, browsers, and operating systems. As they stop receiving security updates, the chance of a cyberattack or data breach increases. They will also stop receiving feature and quality updates.</p>
+    </section>
+
+    <section id="status-quo" class="note-section">
+      <h2>Why the Status Quo Is Not Viable</h2>
+
+      <h3>Risks of continuing with outdated software</h3>
+      <p>There are many risks if we keep the servers as they are. Those risks could become more expensive than migrating them to the cloud or purchasing new hardware. Risking a data leak and downtime just to save money could backfire later. It is important that we investigate upgrading these systems as soon as possible.</p>
+
+      <h3>Business impact of not modernizing</h3>
+      <p>If we do not modernize our servers, it could affect the customer experience and place severe limitations on what we can do with them. Outdated servers can give users a slower experience, which could cost the business revenue. New software may also become incompatible with the older hardware.</p>
+
+      <h3>Goals for the modernization effort</h3>
+      <p>Our goals are to create a better user experience and make the environment more secure and reliable. Faster response times would improve the customer experience, while fewer crashes and less downtime would make the environment more dependable. Security is also crucial because customers expect their data to remain protected.</p>
+    </section>
+
+    <section id="cloud-migration" class="note-section">
+      <h2>Migrating to the Cloud</h2>
+
+      <h3>Why migrate to the cloud?</h3>
+      <p>The IT team decided that the best option for the company is to migrate our servers to the cloud. This could save the company money, remove the need to purchase and maintain physical servers, and let us scale resources to meet the company’s needs.</p>
+
+      <h3>Why we chose cloud migration</h3>
+      <p>We chose cloud migration because of its price and scalability. Buying new servers does not seem like the best option when cloud resources can scale depending on traffic. The cloud provider would maintain the underlying hardware and have redundant systems in place to help prevent downtime.</p>
+
+      <h3>Benefits of cloud migration</h3>
+      <p>Benefits of cloud migration include scalability, availability, cost-effectiveness, performance improvements, software modernization, and security. Resources can increase or decrease depending on demand. The cloud uses a pay-as-you-go model, which means we only pay for what we use.</p>
+      <p>Scalability can also improve availability during busy periods. For example, during a large sale, resources could scale appropriately to give customers a smooth experience. Moving away from legacy hardware would let us modernize our software, and cloud providers offer security measures such as encryption, access controls, and security monitoring.</p>
+
+      <h3>Cons of cloud migration</h3>
+      <p>Downsides include security concerns, data migration costs, potential downtime during migration, and network latency. We would be trusting a third-party provider with company data, so we need to choose a provider with strong security measures.</p>
+      <p>Migration can be expensive, but it may still be cheaper than buying new servers that would need to be replaced again in five to seven years. We would plan the migration outside office hours to reduce disruption. Because the servers would no longer be in-house, network latency could increase, but choosing a cloud region geographically close to the office would help minimize it.</p>
+    </section>
+
+    <section id="migration-process" class="note-section">
+      <h2>The Migration Process</h2>
+      <p>We decided to use Microsoft Azure because of its pay-as-you-go model, compatibility with other Microsoft 365 applications, and its security features. Azure recommends using Azure Migrate, a service designed for server migration. It can migrate virtual machines and physical servers into Azure.</p>
+      <p>To migrate, we would:</p>
+      <ol>
+        <li>Create an Azure Migrate project.</li>
+        <li>Create an Azure network.</li>
+        <li>Install the Mobility Service agent so the replication appliance can run.</li>
+        <li>Use the replication appliance to copy the servers being migrated.</li>
+      </ol>
+      <p>The estimated period for migrating all eight servers to Azure is one to two months.</p>
+    </section>
+
+    <section id="alternatives" class="note-section">
+      <h2>Alternatives Considered</h2>
+
+      <h3>Refreshing on-prem hardware</h3>
+      <p>Another option is purchasing new servers for the on-prem data center. Two models under consideration are the Dell PowerEdge R760 and R660. Both were released in 2023 and are expected to be supported until approximately 2028 to 2030, providing four to seven years before another refresh.</p>
+      <p>The plan would require six R760 servers at $13,104.67 each and two R660 servers at $4,596.90 each, totaling $87,821.82. The advantages are familiarity with on-prem servers and full control over the environment. However, this option has a high upfront expense and limited scalability.</p>
+
+      <h3>Staying with outdated hardware</h3>
+      <p>Another option is to avoid upgrading and keep the current hardware. This is the worst option because of the security risks it creates. The environment would remain inefficient and continue getting worse. The only advantage is that there would be no upfront replacement cost.</p>
+    </section>
+
+    <section id="cost-analysis" class="note-section">
+      <h2>Cost Analysis</h2>
+
+      <h3>Comparing on-prem and cloud migration costs</h3>
+      <div class="notes-table-wrap">
+        <table class="notes-table">
+          <thead>
+            <tr><th>Cost</th><th>Cloud migration</th><th>On-prem refresh</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Upfront cost</td><td>$0.00</td><td>$87,821.82</td></tr>
+            <tr><td>Monthly cost</td><td>$3,573.02</td><td>$3,874.00*</td></tr>
+            <tr><td>Yearly cost</td><td>$42,876.24 (fluctuates)</td><td>$46,488.00 (fluctuates)</td></tr>
+            <tr><td>First-year total</td><td>$42,876.24</td><td>$134,309.82</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><small>*The on-prem monthly cost includes electricity and cooling, maintenance and support, networking, security, and backup and recovery.</small></p>
+
+      <h3>Long-term cost benefits of cloud services</h3>
+      <p>The long-term benefits include lower capital costs, no server hardware purchases, and lower data center costs. Because the cloud provider manages hardware upgrades, replacements, and maintenance, the company could save money over time and eliminate the need to buy new servers every five to eight years. A lower risk of downtime could also protect company revenue.</p>
+    </section>
+
+    <section id="conclusion" class="note-section">
+      <h2>Conclusion and Recommendations</h2>
+      <p>In conclusion, the IT team believes we should migrate our servers to the cloud rather than replace them with new on-prem hardware or continue using the current servers. This should be cheaper over the long term. The IT team will fully support whichever decision is made and will work to complete the project as smoothly and quickly as possible.</p>
+    </section>
+
+    <section id="sources" class="note-section">
+      <h2>Sources</h2>
+      <ul class="source-list">
+        <li>“8 Key Benefits of Cloud Migration.” Mertech. Accessed December 5, 2024.</li>
+        <li>Edwards, Calum. “Microsoft Azure for Small Business: Top 5 Benefits.” Excellence IT. Accessed December 5, 2024.</li>
+        <li>Lane, John, et al. “Cloud Network Latency: 5 Factors to Consider.” Logical Front, August 31, 2023.</li>
+        <li>“Legacy Systems in Digital Transformation: Risks &amp; Challenges.” Impact Networking. Accessed December 5, 2024.</li>
+        <li>“Risks of Having Outdated Servers and Best Practices to Date.” Privacy Ninja, October 23, 2023.</li>
+        <li>“PowerEdge R660 Rack Server.” Dell USA.</li>
+        <li>“PowerEdge R760 Rack Server.” Dell USA.</li>
+      </ul>
+    </section>
 
   </main>
 

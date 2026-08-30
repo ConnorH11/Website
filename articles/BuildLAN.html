@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Build LAN | Connor Horning</title>
+  <title>Build LAN Project | Connor Horning</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,22 +16,6 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="../style.css">
 
-  <style>
-    .pdf-container {
-      width: 100%;
-      height: 80vh;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);
-      margin-top: 2rem;
-    }
-
-    iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-  </style>
 </head>
 
 <body>
@@ -45,6 +29,8 @@
         <a href="../index.html#home" class="nav-link">Home</a>
         <a href="../index.html#projects" class="nav-link">Projects</a>
         <a href="../index.html#articles" class="nav-link active">Articles</a>
+        <a href="../index.html#certification-log" class="nav-link">Learning</a>
+        <a href="../index.html#experience" class="nav-link">Resume</a>
         <a href="../index.html#about" class="nav-link">About</a>
         <a href="../index.html#contact" class="nav-link">Contact</a>
       </div>
@@ -62,18 +48,263 @@
     <a href="../index.html#home" class="mobile-link">Home</a>
     <a href="../index.html#projects" class="mobile-link">Projects</a>
     <a href="../index.html#articles" class="mobile-link">Articles</a>
+    <a href="../index.html#certification-log" class="mobile-link">Learning</a>
+    <a href="../index.html#experience" class="mobile-link">Resume</a>
     <a href="../index.html#about" class="mobile-link">About</a>
     <a href="../index.html#contact" class="mobile-link">Contact</a>
   </div>
 
   <!-- Main Content -->
   <main class="content-wrapper article-content">
-    <h1>Build LAN</h1>
+    <h1>Build LAN Project</h1>
     <p class="subtitle">Network design proposal for a financial department expansion.</p>
+    <p class="article-byline">By Connor Horning</p>
 
-    <div class="pdf-container">
-      <iframe src="../../PDF/BuildLAN.pdf#toolbar=0&navpanes=0&view=FitH" title="Build LAN PDF"></iframe>
+    <div class="article-actions">
+      <a href="../PDF/BuildLAN.pdf" class="github-btn-styled" download>Download original PDF</a>
     </div>
+
+    <nav class="note-toc" aria-label="Table of contents">
+      <p>On this page</p>
+      <ol>
+        <li><a href="#summary">Project summary</a></li>
+        <li><a href="#requirements">Project requirements</a></li>
+        <li><a href="#installation">Installation process</a></li>
+        <li><a href="#cisco-solution">Cisco solution</a></li>
+        <li><a href="#hp-solution">HP solution</a></li>
+        <li><a href="#network-design">Network design</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
+      </ol>
+    </nav>
+
+    <section id="summary" class="note-section">
+      <h2>Project Summary</h2>
+      <p>With the new building being purchased and used as a warehouse, the financial department moved to floor 10. Since floor 10 was previously the warehouse, there was no need for a telecommunications room there. This project proposes a new telecommunications room on floor 10 so the financial department can access the company’s network resources.</p>
+    </section>
+
+    <section id="requirements" class="note-section">
+      <h2>Project Requirements</h2>
+      <p>The new telecommunications room needs to provide the following:</p>
+      <ul>
+        <li>At least 250 gigabit Ethernet edge ports, including at least 50 PoE ports.</li>
+        <li>At least 100 gigabit Ethernet ports for data center equipment.</li>
+        <li>Rack-mountable switches with at least two 10 Gb fiber uplinks to the central data center on floor 2.</li>
+        <li>Fiber patch panels and patch cables for the uplink connections.</li>
+        <li>Three 19-inch, four-post equipment racks.</li>
+        <li>UPS capacity for all switches and five servers, with at least 40% capacity remaining.</li>
+        <li>Additional AC circuits for the new equipment.</li>
+        <li>Spare equipment for emergency replacement.</li>
+      </ul>
+      <p>With this equipment installed, the financial department would have a complete network connection from floor 10 to the main distribution frame on floor 2.</p>
+    </section>
+
+    <section id="installation" class="note-section">
+      <h2>Network Installation Process</h2>
+
+      <h3>Phase 1: Information gathering</h3>
+      <p>The first phase covers the available space, room requirements, equipment that must be purchased, and the amount of cable needed to reach the main distribution frame on floor 2. This phase should take no more than two days.</p>
+
+      <h3>Phase 2: Selection and design</h3>
+      <p>The second phase covers selecting the equipment for either the Cisco or HP implementation and ordering it before implementation begins. The telecommunications room will also be designed during this phase. It must be secured and accessible only to IT staff. This phase should take no more than three days.</p>
+
+      <h3>Phase 3: Implementation</h3>
+      <p>The third phase begins construction and installation. The room walls will be built, a key-card reader will be installed, the racks will be assembled, and the equipment will be mounted. Because the room must be built before the equipment can be installed, this phase is expected to take up to fourteen days.</p>
+
+      <h3>Phase 4: Operation</h3>
+      <p>The fourth phase covers configuring the equipment, running fiber to the main distribution frame on floor 2, connecting the equipment, and installing additional AC outlets. This is the longest phase and is expected to take up to eighteen days.</p>
+
+      <h3>Phase 5: Review and evaluation</h3>
+      <p>The final phase verifies the equipment configuration and confirms end-to-end connectivity between floors 2 and 10. It also includes any troubleshooting needed along the way. This phase is expected to take up to seven days.</p>
+    </section>
+
+    <section id="cisco-solution" class="note-section">
+      <h2>Option 1: Cisco Solution</h2>
+      <p>This is the preferred solution because the central data center already uses Cisco routing equipment.</p>
+
+      <h3>Edge switches: Cisco Catalyst 9300-48P-A</h3>
+      <div class="term-grid equipment-facts">
+        <div class="term-card"><h3>Quantity</h3><p>7</p></div>
+        <div class="term-card"><h3>Individual price</h3><p>$4,810.00</p></div>
+        <div class="term-card"><h3>Listed total</h3><p>$28,571.40</p></div>
+        <div class="term-card"><h3>PoE budget</h3><p>437 watts</p></div>
+      </div>
+      <p>The Catalyst 9300-48P-A is a fully managed Layer 3 switch with 48 PoE+ Ethernet ports, four 10 Gb SFP uplinks, and three rear stacking ports. It includes a 715-watt power supply, supports StackWise-480 and StackPower, and provides 480 Gbps of stacking bandwidth.</p>
+      <ul class="spec-list">
+        <li>32,000 MAC addresses and 32,000 IPv4 routes</li>
+        <li>16,000 IPv6 routing entries</li>
+        <li>8,000 multicast routes</li>
+        <li>5,120-entry QoS and ACL scales</li>
+        <li>16 MB packet buffer, 8 GB DRAM, and 16 GB flash</li>
+        <li>4,094 VLAN IDs</li>
+      </ul>
+      <figure class="article-figure">
+        <img src="assets/build-lan/01-cisco-catalyst-9300.png" alt="Cisco Catalyst 9300-48P-A switch">
+        <figcaption>Cisco Catalyst 9300-48P-A edge switch.</figcaption>
+      </figure>
+
+      <h3>Data center switches: Cisco Business CBS350-48T-4X</h3>
+      <div class="term-grid equipment-facts">
+        <div class="term-card"><h3>Part number</h3><p>8MZ935</p></div>
+        <div class="term-card"><h3>Quantity</h3><p>4</p></div>
+        <div class="term-card"><h3>Individual price</h3><p>$1,203.21</p></div>
+        <div class="term-card"><h3>Listed total</h3><p>$3,609.63</p></div>
+      </div>
+      <p>Each switch provides 48 gigabit Ethernet ports and four SFP uplinks. Three switches provide the required 100 data center ports, while the additional unit is included with the project’s spare equipment. The switch supports Layer 3 features and stacking, draws up to 51 watts, and occupies 1U.</p>
+      <ul class="spec-list">
+        <li>176 Gbps switching capacity and 130.94 Mpps forwarding rate</li>
+        <li>16,000 MAC addresses and 4,094 VLAN IDs</li>
+        <li>512 MB memory and 256 MB flash</li>
+        <li>100-240 VAC input and a listed MTBF of 1,452,667 hours</li>
+      </ul>
+      <figure class="article-figure">
+        <img src="assets/build-lan/02-cisco-cbs350.png" alt="Cisco Business CBS350-48T-4X switch">
+        <figcaption>Cisco Business CBS350 data center switch.</figcaption>
+      </figure>
+
+      <h3>Fiber equipment</h3>
+      <p>The design uses eighteen 3 km SC-connector SFP modules, purchased as two-packs at $18 each, for a listed total of $324. The modules provide the fiber connections between switches and the building’s main distribution frame.</p>
+      <figure class="article-figure article-figure-compact">
+        <img src="assets/build-lan/03-sfp-modules.png" alt="Pair of SC connector SFP modules">
+        <figcaption>SC-connector SFP modules used for the fiber uplinks.</figcaption>
+      </figure>
+      <p>The design also includes 25 fiber patch cables at $8.49 each, four 24-port SC multimode fiber patch panels, and cabling compatible with standard 19-inch racks.</p>
+      <figure class="article-figure">
+        <img src="assets/build-lan/04-fiber-patch-panel.png" alt="Rack-mount fiber patch panel">
+        <figcaption>Rack-mount SC fiber patch panel.</figcaption>
+      </figure>
+
+      <h3>Copper patch panels and racks</h3>
+      <p>The copper side uses TRENDnet 48-port Cat 6 unshielded patch panels. Each panel costs $70.14, with a listed total of $701.40.</p>
+      <figure class="article-figure">
+        <img src="assets/build-lan/05-copper-patch-panel.png" alt="TRENDnet 48-port Cat 6 patch panel">
+        <figcaption>TRENDnet 48-port Cat 6 patch panel.</figcaption>
+      </figure>
+      <p>Three Quest FR1924-28-02 adjustable steel floor racks provide 28U of space and adjustable depth from 24 to 36 inches. Each rack costs $395.84, for a total of $1,187.52.</p>
+      <figure class="article-figure article-figure-compact">
+        <img src="assets/build-lan/06-equipment-rack.png" alt="Four-post adjustable equipment rack">
+        <figcaption>Quest four-post adjustable equipment rack.</figcaption>
+      </figure>
+
+      <h3>UPS equipment and AC power</h3>
+      <p>The Cisco option uses CyberPower Smart App Sinewave PR3000RTXL2UN UPS units. Each unit is rated for 3,000 watts / 3,000 VA, occupies 2U, accepts 100-120 VAC, and provides nine output connectors. Runtime is listed as 1.7 minutes at full load or seven minutes at half load.</p>
+      <div class="term-grid equipment-facts">
+        <div class="term-card"><h3>Quantity</h3><p>4</p></div>
+        <div class="term-card"><h3>Individual price</h3><p>$1,630.95</p></div>
+        <div class="term-card"><h3>Listed total</h3><p>$4,892.85</p></div>
+        <div class="term-card"><h3>Recharge time</h3><p>3 hours</p></div>
+      </div>
+      <figure class="article-figure">
+        <img src="assets/build-lan/07-cyberpower-ups.png" alt="CyberPower rack-mount UPS">
+        <figcaption>CyberPower Smart App Sinewave rack-mount UPS.</figcaption>
+      </figure>
+      <div class="note-callout">
+        <strong>Power requirement</strong>
+        <p>The Cisco design requires five 120 V, 20 A circuits: 8,670 watts divided by 1,680 usable watts per circuit at 70% capacity equals 4.66, rounded up to five circuits.</p>
+      </div>
+      <figure class="article-figure article-figure-compact">
+        <img src="assets/build-lan/08-ac-receptacle.png" alt="120-volt AC receptacle">
+        <figcaption>Example of the AC receptacles required in the room.</figcaption>
+      </figure>
+
+      <h3>Spare equipment and total</h3>
+      <ul>
+        <li>One Cisco Catalyst 9300-48P-A</li>
+        <li>One CyberPower PR3000RTXL2UN UPS</li>
+        <li>One Cisco Business CBS350-48T-4X</li>
+        <li>One fiber patch panel and one copper patch panel</li>
+        <li>One pack of Cat 6 cable</li>
+        <li>Seven SC fiber patch cables</li>
+      </ul>
+      <p>The listed spare-parts cost is <strong>$7,971.03</strong>. The listed total for the Cisco solution is <strong>$50,830.71</strong>.</p>
+    </section>
+
+    <section id="hp-solution" class="note-section">
+      <h2>Option 2: HP Solution</h2>
+
+      <h3>Edge switches: HPE Aruba 2530-48G-PoE+</h3>
+      <div class="term-grid equipment-facts">
+        <div class="term-card"><h3>Quantity</h3><p>7</p></div>
+        <div class="term-card"><h3>Individual price</h3><p>$2,655.74</p></div>
+        <div class="term-card"><h3>Total</h3><p>$18,590.18</p></div>
+        <div class="term-card"><h3>Power draw</h3><p>441 watts</p></div>
+      </div>
+      <p>The Aruba 2530 is a fully managed Layer 2 switch with 48 PoE+ RJ-45 ports, four fixed gigabit SFP ports, IPv6 support, and enhanced access security. It supports stacks of up to 16 switches and occupies 1U.</p>
+      <ul class="spec-list">
+        <li>104 Gbps switching capacity</li>
+        <li>16,000-entry MAC address table</li>
+        <li>128 MB flash, 256 MB DDR3 DIMM, and 3 MB dynamically allocated packet buffering</li>
+      </ul>
+      <figure class="article-figure">
+        <img src="assets/build-lan/09-hpe-aruba-2530.png" alt="HPE Aruba 2530-48G-PoE+ switch">
+        <figcaption>HPE Aruba 2530 edge switch.</figcaption>
+      </figure>
+
+      <h3>Data center switches: HPE Aruba 6300F 48-port</h3>
+      <div class="term-grid equipment-facts">
+        <div class="term-card"><h3>Part number</h3><p>JL667A</p></div>
+        <div class="term-card"><h3>Quantity</h3><p>4</p></div>
+        <div class="term-card"><h3>Individual price</h3><p>$4,706.62</p></div>
+        <div class="term-card"><h3>Total</h3><p>$18,826.48</p></div>
+      </div>
+      <p>The Aruba 6300F provides 48 gigabit Ethernet ports, four SFP uplinks, 494 Gbps switching capacity, and support for stacks of up to ten switches. It can draw 740 watts with full PoE capability and occupies 1U.</p>
+      <ul class="spec-list">
+        <li>8 GB DDR4 and 32 GB eMMC storage</li>
+        <li>8 MB shared packet buffer</li>
+        <li>20,480 IPv4 addresses and 5,120 IPv6 addresses</li>
+        <li>20,480 MAC addresses</li>
+      </ul>
+      <figure class="article-figure">
+        <img src="assets/build-lan/10-hpe-aruba-6300f.png" alt="HPE Aruba 6300F switch">
+        <figcaption>HPE Aruba 6300F data center switch.</figcaption>
+      </figure>
+
+      <h3>Shared cabling and rack equipment</h3>
+      <p>The HP solution uses the same SFP modules, fiber patch cables, fiber patch panels, copper patch panels, and three Quest equipment racks as the Cisco option.</p>
+
+      <h3>UPS equipment and AC power</h3>
+      <p>The HP option uses Tripp Lite SMART5000TEL3U rack-mount UPS units. Each unit is rated for 5,000 VA / 3,750 watts, occupies 3U, and provides 120 V outlets plus five 208 V connectors. Runtime is listed as 8.5 minutes at full load or 16 minutes at half load.</p>
+      <div class="term-grid equipment-facts">
+        <div class="term-card"><h3>Quantity</h3><p>4</p></div>
+        <div class="term-card"><h3>Individual price</h3><p>$3,557.52</p></div>
+        <div class="term-card"><h3>Total</h3><p>$14,230.08</p></div>
+        <div class="term-card"><h3>Height</h3><p>3U</p></div>
+      </div>
+      <figure class="article-figure">
+        <img src="assets/build-lan/11-tripp-lite-ups.png" alt="Tripp Lite rack-mount UPS">
+        <figcaption>Tripp Lite SMART5000TEL3U rack-mount UPS.</figcaption>
+      </figure>
+      <div class="note-callout">
+        <strong>Power requirement</strong>
+        <p>The HP design requires six 120 V, 20 A circuits: 9,262 watts divided by 1,680 usable watts per circuit at 70% capacity equals 5.51, rounded up to six circuits.</p>
+      </div>
+
+      <h3>Spare equipment and total</h3>
+      <ul>
+        <li>One HPE Aruba 2530-48G-PoE+</li>
+        <li>One HPE Aruba 6300F 48-port switch</li>
+        <li>One Tripp Lite UPS</li>
+        <li>One fiber patch panel and one copper patch panel</li>
+        <li>One pack of Cat 6 cable</li>
+        <li>Seven SC fiber patch cables</li>
+      </ul>
+      <p>The listed spare-parts cost is <strong>$11,242.42</strong>. The listed total for the HP solution is <strong>$53,789.97</strong>.</p>
+    </section>
+
+    <section id="network-design" class="note-section">
+      <h2>Network Design Overview</h2>
+      <figure class="article-figure article-figure-diagram">
+        <img src="assets/build-lan/12-network-rack-design.png" alt="Three-rack telecommunications room design">
+        <figcaption>Proposed arrangement of the three equipment racks.</figcaption>
+      </figure>
+      <p>Three of the five servers are placed in the middle rack, with the remaining servers split between the outside racks. Each rack contains two copper patch panels, one fiber patch panel, two edge switches, and one data center switch.</p>
+      <p>The servers connect to the data center switches, which connect to the fiber uplinks leading to the main data center. The edge switches connect through the copper patch panels to wall jacks throughout the financial department. The heaviest devices sit at the bottom to keep the racks stable. The UPS systems are not pictured; one would be installed below the servers in each rack.</p>
+    </section>
+
+    <section id="conclusion" class="note-section">
+      <h2>Conclusion</h2>
+      <p>Of the two solutions, the Cisco option is the better fit. The central data center on floor 2 already uses two Cisco routers, so staying with the same vendor provides a familiar command set and should make the environment easier to manage.</p>
+      <p>The HP equipment would still be compatible with the existing Cisco routers, but the Cisco solution is approximately $3,000 cheaper and draws less power. Overall, the Cisco option better meets the needs of the new telecommunications room on floor 10.</p>
+    </section>
 
   </main>
 
