@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Day 2 of Connor Horning's CompTIA Security+ study notes, covering security controls, risk assessments, data privacy, and media sanitization.">
+    <title>Risk Management Part 2 | Security+ Day 2</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../../index.html#home" class="logo">CH.</a>
+
+            <div class="desktop-menu">
+                <a href="../../index.html#home" class="nav-link">Home</a>
+                <a href="../../index.html#projects" class="nav-link">Projects</a>
+                <a href="../../index.html#articles" class="nav-link">Articles</a>
+                <a href="../../index.html#certification-log" class="nav-link active">Learning</a>
+                <a href="../../index.html#experience" class="nav-link">Resume</a>
+                <a href="../../index.html#about" class="nav-link">About</a>
+                <a href="../../index.html#contact" class="nav-link">Contact</a>
+            </div>
+
+            <div class="mobile-toggle" id="mobile-toggle" role="button" tabindex="0" aria-label="Open navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="../../index.html#home" class="mobile-link">Home</a>
+        <a href="../../index.html#projects" class="mobile-link">Projects</a>
+        <a href="../../index.html#articles" class="mobile-link">Articles</a>
+        <a href="../../index.html#certification-log" class="mobile-link">Learning</a>
+        <a href="../../index.html#experience" class="mobile-link">Resume</a>
+        <a href="../../index.html#about" class="mobile-link">About</a>
+        <a href="../../index.html#contact" class="mobile-link">Contact</a>
+    </div>
+
+    <main class="content-wrapper article-content study-note-page day-02-note">
+        <a class="note-back-link" href="../../index.html#certification-log">&larr; Back to certification journal</a>
+
+        <div class="note-meta">
+            <span>Day 02</span>
+            <span><time datetime="2026-09-05">09/05/2026</time></span>
+            <span>CompTIA Security+</span>
+            <span>SY0-701</span>
+        </div>
+
+        <h1>Risk Management Part 2</h1>
+        <p class="subtitle note-intro">Today I went further into security controls and risk assessments, then moved
+            into data privacy, the information lifecycle, and how storage media should be handled when it is no longer
+            being used.</p>
+
+        <nav class="note-toc" aria-label="Day 2 note sections">
+            <p>On this page</p>
+            <ol>
+                <li><a href="#security-controls">Security controls</a></li>
+                <li><a href="#frameworks">Control frameworks</a></li>
+                <li><a href="#risk-assessments">Risk assessments</a></li>
+                <li><a href="#risk-treatment">Risk treatment</a></li>
+                <li><a href="#quantitative-risk">Quantitative risk</a></li>
+                <li><a href="#qualitative-risk">Qualitative risk</a></li>
+                <li><a href="#information-lifecycle">Information lifecycle</a></li>
+                <li><a href="#sensitive-data">PII and PHI</a></li>
+                <li><a href="#privacy-techniques">Privacy techniques</a></li>
+                <li><a href="#media-sanitization">Media sanitization</a></li>
+            </ol>
+        </nav>
+
+        <section id="security-controls" class="note-section">
+            <h2>Security Controls</h2>
+            <p>A security control is a safeguard put in place to reduce risk. There is no single control that works for
+                every company or every system, so the right choice depends on the platform, vendor, users, and the risk
+                being addressed.</p>
+
+            <h3>Control categories</h3>
+            <p>Categories describe where a control mainly comes from or how it is carried out.</p>
+            <div class="term-grid">
+                <div class="term-card">
+                    <h3>Managerial</h3>
+                    <p>Controls that guide security through planning, policies, assessments, and oversight. A risk
+                        assessment or security policy would fit here.</p>
+                </div>
+                <div class="term-card">
+                    <h3>Operational</h3>
+                    <p>Controls mostly carried out by people and everyday processes, such as awareness training,
+                        incident response, or reviewing backups.</p>
+                </div>
+                <div class="term-card">
+                    <h3>Technical</h3>
+                    <p>Controls enforced by technology. Firewalls, MFA, encryption, endpoint protection, and access
+                        control lists are all technical controls.</p>
+                </div>
+                <div class="term-card">
+                    <h3>Physical</h3>
+                    <p>Controls that protect people, equipment, and facilities. Locks, fences, cameras, lighting, and
+                        security guards are common examples.</p>
+                </div>
+            </div>
+
+            <h3>Functional control types</h3>
+            <p>A control can also be described by what it is supposed to do. A single control can fit more than one
+                type depending on how it is used.</p>
+            <div class="notes-table-wrap">
+                <table class="notes-table">
+                    <thead><tr><th>Type</th><th>Purpose</th><th>Example</th></tr></thead>
+                    <tbody>
+                        <tr><td>Preventive</td><td>Stops an incident before it happens.</td><td>MFA or a locked door</td></tr>
+                        <tr><td>Deterrent</td><td>Discourages someone from trying.</td><td>Warning signs or visible cameras</td></tr>
+                        <tr><td>Detective</td><td>Finds activity during or after an incident.</td><td>IDS alerts or log reviews</td></tr>
+                        <tr><td>Corrective</td><td>Limits damage and restores normal operations.</td><td>Restoring a clean backup</td></tr>
+                        <tr><td>Compensating</td><td>Provides another safeguard when the preferred control is not possible.</td><td>Extra monitoring for a legacy system</td></tr>
+                        <tr><td>Directive</td><td>Tells people what they are expected to do.</td><td>Policies and required procedures</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="frameworks" class="note-section">
+            <h2>Control Frameworks</h2>
+            <p>Frameworks give organizations a common way to choose, organize, and review controls instead of making
+                the entire security program up from scratch.</p>
+            <div class="term-grid">
+                <div class="term-card">
+                    <h3>CSA Cloud Controls Matrix</h3>
+                    <p>The Cloud Security Alliance's CCM is built for cloud environments. It maps cloud security
+                        controls to common standards and helps both cloud providers and customers review their security.</p>
+                </div>
+                <div class="term-card">
+                    <h3>PCI DSS</h3>
+                    <p>The Payment Card Industry Data Security Standard contains security requirements for
+                        organizations that store, process, or transmit payment card data.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="risk-assessments" class="note-section">
+            <h2>Risk Assessments</h2>
+            <p>A risk assessment helps a company figure out which threats actually matter, how much exposure it has,
+                and where controls should be added or improved.</p>
+            <ol class="note-list">
+                <li><strong>Build awareness:</strong> use internal data and threat intelligence to understand the environment.</li>
+                <li><strong>Identify and analyze risk:</strong> look at the assets, threats, vulnerabilities, likelihood, and impact.</li>
+                <li><strong>Evaluate existing controls:</strong> see what is already reducing the risk and where the gaps are.</li>
+                <li><strong>Choose and implement controls:</strong> treat the risk based on the organization's priorities.</li>
+                <li><strong>Review it again:</strong> risks and systems change, so assessments need to be repeated.</li>
+            </ol>
+
+            <div class="note-callout">
+                <strong>Inherent risk vs. residual risk</strong>
+                <p><b>Inherent risk</b> is the amount of risk before controls are considered. <b>Residual risk</b> is
+                    what remains after the controls are in place. The goal is not always zero risk; it is to bring the
+                    remaining risk down to a level the organization can accept.</p>
+            </div>
+
+            <p>Risks can come from environmental events such as floods or power loss, person-made events such as
+                attacks or mistakes, internal sources such as employees and company systems, or external sources such
+                as vendors and threat actors.</p>
+        </section>
+
+        <section id="risk-treatment" class="note-section">
+            <h2>Risk Treatment</h2>
+            <p>Once a risk is understood, the organization has to decide what to do with it.</p>
+            <div class="term-grid">
+                <div class="term-card"><h3>Mitigation</h3><p>Add controls that lower the likelihood or impact. This is also called risk reduction.</p></div>
+                <div class="term-card"><h3>Transfer</h3><p>Share some of the financial or operational impact with another party, such as through insurance or a contract.</p></div>
+                <div class="term-card"><h3>Avoidance</h3><p>Stop the activity that creates the risk, or choose a different approach that removes it.</p></div>
+                <div class="term-card"><h3>Acceptance</h3><p>Understand the risk and choose to live with it because the cost of another treatment is not worth it.</p></div>
+            </div>
+            <p><strong>Risk appetite</strong> is the overall amount and type of risk an organization is willing to
+                pursue or keep. It helps guide which risks can be accepted and which need more attention.</p>
+        </section>
+
+        <section id="quantitative-risk" class="note-section">
+            <h2>Quantitative Risk</h2>
+            <p>Quantitative analysis uses dollar amounts and expected frequency to estimate the cost of a risk. The
+                main formulas build on each other:</p>
+            <div class="notes-table-wrap">
+                <table class="notes-table">
+                    <thead><tr><th>Term</th><th>Meaning</th><th>Formula or example</th></tr></thead>
+                    <tbody>
+                        <tr><td>AV</td><td>Asset value</td><td>The full value of the asset</td></tr>
+                        <tr><td>EF</td><td>Exposure factor</td><td>The percentage of value lost in one event</td></tr>
+                        <tr><td>SLE</td><td>Single loss expectancy</td><td>AV &times; EF</td></tr>
+                        <tr><td>ARO</td><td>Annualized rate of occurrence</td><td>Expected number of events each year</td></tr>
+                        <tr><td>ALE</td><td>Annualized loss expectancy</td><td>SLE &times; ARO</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="note-callout">
+                <strong>Working through the numbers</strong>
+                <p>If an asset is worth $24,000 and one incident is expected to cause a 12.5% loss, the SLE is $3,000.
+                    If that incident is expected four times per year, the ALE is $12,000. That yearly estimate can be
+                    compared with the cost of a security control.</p>
+            </div>
+        </section>
+
+        <section id="qualitative-risk" class="note-section">
+            <h2>Qualitative Risk</h2>
+            <p>Qualitative analysis uses ratings such as low, medium, and high when an exact dollar amount is not
+                practical. Likelihood and impact are compared to decide the overall severity.</p>
+            <ul class="note-list">
+                <li>A <strong>risk matrix</strong> compares likelihood and impact.</li>
+                <li>A <strong>heat map</strong> makes the higher-priority risks easier to spot visually.</li>
+                <li>A <strong>risk register</strong> tracks the risk, its owner, likelihood, impact, treatment, controls, and current status.</li>
+            </ul>
+            <p>The ratings can be subjective, so the organization should define what each level means and use the same
+                scale consistently.</p>
+        </section>
+
+        <section id="information-lifecycle" class="note-section">
+            <h2>The Information Lifecycle</h2>
+            <p>Information needs protection for its entire life, not just while someone is actively using it.</p>
+            <ol class="note-list">
+                <li><strong>Collect:</strong> obtain only the information that is actually needed.</li>
+                <li><strong>Store:</strong> protect data at rest with access controls, encryption, and backups.</li>
+                <li><strong>Process:</strong> control how applications and users work with the data.</li>
+                <li><strong>Share:</strong> protect data while it moves and make sure it only reaches approved people.</li>
+                <li><strong>Archive or delete:</strong> follow retention rules, then securely dispose of data when it is no longer needed.</li>
+            </ol>
+        </section>
+
+        <section id="sensitive-data" class="note-section">
+            <h2>PII and PHI</h2>
+            <div class="term-grid">
+                <div class="term-card">
+                    <h3>PII</h3>
+                    <p>Personally identifiable information can identify or be linked to a person. Names, Social
+                        Security numbers, account numbers, addresses, biometrics, and combinations of personal details
+                        can all count.</p>
+                </div>
+                <div class="term-card">
+                    <h3>PHI</h3>
+                    <p>Protected health information is identifiable health information protected under HIPAA when it
+                        is handled by a covered entity or business associate. Medical records, diagnoses, and billing
+                        details are common examples.</p>
+                </div>
+            </div>
+            <p><strong>Data sovereignty</strong> means data can be subject to the laws and rules of the country where it
+                is stored or processed. Cloud storage makes this important because the server may be in a different
+                country than the user or company.</p>
+        </section>
+
+        <section id="privacy-techniques" class="note-section">
+            <h2>Privacy Techniques</h2>
+            <div class="notes-table-wrap">
+                <table class="notes-table">
+                    <thead><tr><th>Technique</th><th>What it does</th></tr></thead>
+                    <tbody>
+                        <tr><td>Anonymization</td><td>Removes or changes identifiers so the data can no longer reasonably be tied back to a person.</td></tr>
+                        <tr><td>Pseudonymization</td><td>Replaces identifiers with aliases, but the data can still be reconnected using separately protected information.</td></tr>
+                        <tr><td>Data minimization</td><td>Collects and keeps only the information needed for a specific purpose.</td></tr>
+                        <tr><td>Tokenization</td><td>Replaces sensitive data with a token while the real value is kept in a protected system.</td></tr>
+                        <tr><td>Masking</td><td>Hides part or all of a value when the full information does not need to be displayed.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p>Pseudonymized information still needs protection because it can be linked back to the person when the
+                additional information is available.</p>
+        </section>
+
+        <section id="media-sanitization" class="note-section">
+            <h2>Media Sanitization and Destruction</h2>
+            <p>Pressing delete or doing a quick format usually removes the file reference, not every copy of the data.
+                Before media is reused, donated, returned, or thrown away, the organization needs a sanitization method
+                that matches the media and the sensitivity of the information.</p>
+            <div class="term-grid">
+                <div class="term-card"><h3>Clear</h3><p>Uses logical techniques to protect against simple recovery. Overwriting may be used where the device supports it.</p></div>
+                <div class="term-card"><h3>Purge</h3><p>Uses stronger techniques that make recovery impractical, such as a supported sanitize command or cryptographic erase.</p></div>
+                <div class="term-card"><h3>Destroy</h3><p>Physically damages the media so it cannot be used again. Examples include shredding, pulverizing, or incineration by an approved service.</p></div>
+                <div class="term-card"><h3>Degauss</h3><p>Uses a strong magnetic field on magnetic media. It can work for some hard drives and tapes, but not SSDs or flash storage.</p></div>
+            </div>
+            <div class="note-callout">
+                <strong>The method depends on the media</strong>
+                <p>A technique that works for a magnetic hard drive may not work for an SSD. Cryptographic erase can
+                    be fast on a properly configured self-encrypting drive, but the encryption and key handling need
+                    to have been set up correctly beforehand.</p>
+            </div>
+            <p>Paper, film, and tape may need shredding, pulping, burning, or another approved destruction process. No
+                matter which method is used, the asset inventory should be updated and the disposal should be recorded.</p>
+        </section>
+
+        <hr>
+
+        <section class="note-section" aria-labelledby="sources-heading">
+            <h2 id="sources-heading">Reference Sources</h2>
+            <ul class="source-list">
+                <li><a href="https://csrc.nist.gov/Projects/risk-management/sp800-53-controls/downloads" target="_blank" rel="noopener noreferrer">NIST SP 800-53 Security and Privacy Controls</a></li>
+                <li><a href="https://csrc.nist.gov/pubs/sp/800/88/r2/final" target="_blank" rel="noopener noreferrer">NIST SP 800-88 Rev. 2: Media Sanitization</a></li>
+                <li><a href="https://cloudsecurityalliance.org/research/cloud-controls-matrix" target="_blank" rel="noopener noreferrer">Cloud Security Alliance: Cloud Controls Matrix</a></li>
+                <li><a href="https://www.pcisecuritystandards.org/standards/pci-dss/" target="_blank" rel="noopener noreferrer">PCI Security Standards Council: PCI DSS</a></li>
+                <li><a href="https://csrc.nist.gov/glossary/term/personally_identifiable_information" target="_blank" rel="noopener noreferrer">NIST definition of PII</a></li>
+                <li><a href="https://www.hhs.gov/answers/hipaa/what-is-phi/index.html" target="_blank" rel="noopener noreferrer">U.S. Department of Health and Human Services: PHI</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Connor Horning.</p>
+    </footer>
+
+    <script src="../../script.js"></script>
+</body>
+
+</html>

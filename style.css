@@ -1558,6 +1558,13 @@ h1, h2, h3 { letter-spacing: -0.035em; }
     font-weight: 700;
 }
 
+.day-date {
+    color: var(--text-secondary);
+    font-size: 0.66rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+}
+
 .day-details p {
     max-width: 540px;
     color: var(--text-secondary);
@@ -1569,7 +1576,9 @@ h1, h2, h3 { letter-spacing: -0.035em; }
 .study-log-note { margin-top: 1.25rem; }
 
 /* Certification study-note pages */
-.article-content.study-note-page::before { content: 'SECURITY+ JOURNAL / DAY 01'; }
+.article-content.study-note-page::before { content: 'SECURITY+ JOURNAL'; }
+.article-content.study-note-page.day-01-note::before { content: 'SECURITY+ JOURNAL / DAY 01'; }
+.article-content.study-note-page.day-02-note::before { content: 'SECURITY+ JOURNAL / DAY 02'; }
 
 .article-content.study-note-page h1 {
     font-size: clamp(2.6rem, 4.5vw, 3.8rem);
@@ -1852,6 +1861,107 @@ p code, li code { background: #e6dfd4; color: #6e3427; border-radius: 2px; }
 .pdf-container { border-radius: 0 !important; box-shadow: 10px 10px 0 #ddd7cd !important; border: 1px solid #d4cec3; }
 
 footer { border-top: 1px solid #d9d4ca; color: var(--text-secondary); padding: 2.5rem 2rem; }
+
+/* Light/dark theme control */
+.nav-container { gap: 1rem; }
+.desktop-menu { margin-left: auto; }
+
+.theme-toggle {
+    display: grid;
+    flex: 0 0 34px;
+    width: 34px;
+    height: 34px;
+    place-items: center;
+    padding: 0;
+    border: 1px solid #c8c1b6;
+    border-radius: 50%;
+    background: transparent;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: color var(--transition), border-color var(--transition), background var(--transition);
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus-visible {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.theme-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.theme-icon { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.7; }
+.theme-icon-moon { display: none; }
+[data-theme="dark"] .theme-icon-sun { display: none; }
+[data-theme="dark"] .theme-icon-moon { display: block; }
+
+[data-theme="dark"] {
+    color-scheme: dark;
+    --bg-color: #181916;
+    --bg-color-light: #22231f;
+    --text-primary: #f0ece3;
+    --text-secondary: #aaa69d;
+    --accent: #da7259;
+    --accent-glow: rgba(218, 114, 89, 0.14);
+}
+
+[data-theme="dark"] .navbar { background: rgba(24, 25, 22, 0.94); border-color: #373831; }
+[data-theme="dark"] .nav-link { color: #bbb7ae; }
+[data-theme="dark"] .mobile-menu { background: var(--bg-color); }
+[data-theme="dark"] .theme-toggle { border-color: #4a4b43; }
+[data-theme="dark"] .profile-img,
+[data-theme="dark"] .hero-visual .profile-img { box-shadow: 13px 13px 0 #30312c; }
+[data-theme="dark"] .profile-img:hover,
+[data-theme="dark"] .hero-visual .profile-img:hover { box-shadow: 16px 16px 0 #30312c; }
+[data-theme="dark"] .project-card,
+[data-theme="dark"] .project-card.text-only,
+[data-theme="dark"] .articles-list,
+[data-theme="dark"] .article-item,
+[data-theme="dark"] .certification-journal,
+[data-theme="dark"] .certification-overview,
+[data-theme="dark"] .certification-facts,
+[data-theme="dark"] .certification-facts > div,
+[data-theme="dark"] .certification-resources,
+[data-theme="dark"] .resource-list li + li,
+[data-theme="dark"] .study-entries-header,
+[data-theme="dark"] .study-day,
+[data-theme="dark"] .note-meta span,
+[data-theme="dark"] .note-intro,
+[data-theme="dark"] .note-toc,
+[data-theme="dark"] .term-grid,
+[data-theme="dark"] .notes-table-wrap,
+[data-theme="dark"] .notes-table th,
+[data-theme="dark"] .notes-table td,
+[data-theme="dark"] .article-content h4,
+[data-theme="dark"] .article-content hr,
+[data-theme="dark"] .article-content.project-detail-page > .subtitle,
+[data-theme="dark"] .project-byline,
+[data-theme="dark"] .pdf-container,
+[data-theme="dark"] footer { border-color: #3b3c35; }
+[data-theme="dark"] .project-card:hover { background: #20211d; }
+[data-theme="dark"] .certification-overview,
+[data-theme="dark"] .note-callout,
+[data-theme="dark"] .notes-table th { background: #22231f; }
+[data-theme="dark"] .study-entries,
+[data-theme="dark"] .term-card { background: var(--bg-color); }
+[data-theme="dark"] .resource-count { background: #30312b; }
+[data-theme="dark"] .study-progress,
+[data-theme="dark"] .study-progress::-webkit-progress-bar { background: #3a3b34; }
+[data-theme="dark"] .study-day-list { scrollbar-color: var(--accent) #30312b; }
+[data-theme="dark"] .study-day-list::-webkit-scrollbar-track { background: #30312b; }
+[data-theme="dark"] .study-day-list::-webkit-scrollbar-thumb { border-color: #30312b; }
+[data-theme="dark"] .article-content { color: #c9c5bc; }
+[data-theme="dark"] .article-content img,
+[data-theme="dark"] .pdf-container { box-shadow: 10px 10px 0 #30312c !important; }
+[data-theme="dark"] p code,
+[data-theme="dark"] li code { background: #2d2e29; color: #eea18f; }
+[data-theme="dark"] .btn-primary { color: #181916; background: #f0ece3; border-color: #f0ece3; }
+[data-theme="dark"] .btn-primary:hover { color: #fffaf3; background: var(--accent); border-color: var(--accent); }
+[data-theme="dark"] .btn-outline,
+[data-theme="dark"] .carousel-btn { border-color: #67685f; }
+
+@media (max-width: 980px) {
+    .desktop-menu { gap: 1.1rem; }
+    .nav-link { font-size: 0.82rem; }
+}
 
 @media (max-width: 768px) {
     .section { padding: 4.5rem 0; }
