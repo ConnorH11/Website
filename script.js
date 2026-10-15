@@ -77,16 +77,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const hiddenSections = document.querySelectorAll('.hidden-section');
     hiddenSections.forEach((el) => observer.observe(el));
 
-    // Keep each certification progress label in sync with its progress element.
-    document.querySelectorAll('progress[id]').forEach((progress) => {
-        const label = document.querySelector(`[data-progress-for="${progress.id}"]`);
-        if (label) {
-            label.textContent = `${Math.round(Number(progress.value))}% complete`;
-        }
-    });
-
     // Active Link Highlighting - Improved scroll-spy
-    const navSections = ['home', 'projects', 'articles', 'certification-log', 'experience', 'about', 'contact'];
+    const navSections = ['home', 'projects', 'articles', 'notes', 'experience', 'about', 'contact'];
     const navLinks = document.querySelectorAll('.nav-link');
     const mobileNavLinks = document.querySelectorAll('.mobile-link');
 
